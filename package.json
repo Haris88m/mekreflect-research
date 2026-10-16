@@ -1,0 +1,14 @@
+{
+  "name": "mekreflect-research",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.13.0"},
+  "scripts": {
+    "build": "node company-build.mjs",
+    "test": "node research-platform-test.mjs && node backend/test.mjs",
+    "preview": "node company-preview.mjs",
+    "refresh:check": "node scripts/refresh-research.mjs",
+    "refresh:write": "node scripts/refresh-research.mjs --write"
+  }
+}

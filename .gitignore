@@ -1,0 +1,11 @@
+node_modules/
+dist-company/
+private/
+.wrangler/
+.env
+.env.*
+.dev.vars*
+backend/wrangler.jsonc
+*.sqlite*
+*.db
+*.log

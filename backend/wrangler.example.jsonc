@@ -1,0 +1,14 @@
+{
+  "name": "mekreflect-research-local",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-10-16",
+  "workers_dev": false,
+  "vars": {"PUBLIC_SITE": "http://127.0.0.1:4222"},
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "mekreflect-research-local",
+    "database_id": "replace-with-your-own-d1-id"
+  }],
+  "triggers": {"crons": ["17 6 * * *"]},
+  "observability": {"enabled": false}
+}
