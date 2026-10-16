@@ -8,8 +8,9 @@ I am Haris Mekic. I work on how people turn operational knowledge into AI system
 
 The site connects three distinct kinds of work. The first is my applied research on context, procedures and AI-worker handoffs. The second is a dated, attributed import of external AI evaluation data. The third is a reading queue of public arXiv metadata. They are not interchangeable measures of performance.
 
-- A dependency-free Node renderer builds 31 editorial pages and machine-readable public data.
-- Four source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission and reproducible visual production.
+- A dependency-free Node renderer builds 33 editorial pages and machine-readable public data.
+- Six source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission, visual production, telemetry parsing and current evidence gates.
+- The homepage presents actual recorded observations with their denominators and links to source records. The contact backend keeps withdrawal available under its own allowance when intake is exhausted.
 - An explicit release allowlist and content hashes keep private work outside the release.
 - An Epoch AI data importer validates the archive and preserves attribution, source dates, missing values and confidence bounds.
 - OBSERVER8 records describe 23 hosted AI tasks across ten fictional operational cases. Disputed readiness is distinguished from demonstrated false blocking. The raw private research archive is not included.
@@ -55,7 +56,8 @@ The Worker refreshes selected arXiv metadata daily when deployed with its cron c
 | --- | --- |
 | `company-build.mjs` | Static build, routing, headers and release manifest |
 | `research-platform.mjs` | Research navigation, pages and evidence presentation |
-| `open-research.mjs` | Source catalogue and four implementation case studies |
+| `open-research.mjs` | Source catalogue and six implementation case studies |
+| `research-home.mjs` | Mission, recorded findings and the inspected context handoff |
 | `research-platform.js` | Search, accessible menus, form handling and source status |
 | `intelligence-data.mjs` | Attributed public-source snapshot |
 | `observer-benchmark-data.mjs` | Bounded original experiment observations |

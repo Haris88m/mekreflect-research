@@ -1,5 +1,5 @@
 const ORIGINS = new Set(['https://mekreflect.com', 'https://www.mekreflect.com', 'https://mekreflect.pages.dev', 'http://127.0.0.1:4222', 'http://localhost:4222']);
-const VERSION = '2026-10-16-research-v1';
+const VERSION = '2026-10-16-research-v2';
 const DAY = 86400000;
 const POLICY = 'research-contact-2026-10-16';
 export const SOURCE = `https://export.arxiv.org/api/query?search_query=${encodeURIComponent('(cat:cs.AI OR cat:cs.CL) AND (all:"multi-agent" OR all:"agent evaluation")')}&sortBy=submittedDate&sortOrder=descending&start=0&max_results=12`;
@@ -36,19 +36,19 @@ async function boundedBody(request, limit = 16000) {
  try{return JSON.parse(new TextDecoder().decode(bytes));}catch{throw new Error('INVALID_JSON');}
 }
 
-async function rateLimit(request, env) {
+async function rateLimit(request, env, bucket, allowance) {
  // A daily pseudonymous digest, not a raw IP address. Expired rows are removed daily.
  const now=Date.now(), day=Math.floor(now/DAY);
- const key=await sha(`${day}:${request.headers.get('CF-Connecting-IP') || 'unknown'}`);
+ const key=await sha(`${bucket}:${day}:${request.headers.get('CF-Connecting-IP') || 'unknown'}`);
  const row=await env.DB.prepare('INSERT INTO request_limits(key,count,expires_at) VALUES (?,1,?) ON CONFLICT(key) DO UPDATE SET count=count+1 RETURNING count').bind(key, (day+2)*DAY).first();
- return row.count <= 12;
+ return row.count <= allowance;
 }
 
 async function submission(request, env, kind) {
  if (!ORIGINS.has(request.headers.get('origin'))) return json({ok:false,message:'Open this form from the MEKreflect website.'},403);
  const data=await boundedBody(request);
  const error=validateSubmission(data,kind); if(error) return json({ok:false,message:error},400);
- if(!await rateLimit(request,env)) return json({ok:false,message:'Too many requests today. Please try again tomorrow or use the contact email.'},429);
+ if(!await rateLimit(request,env,'intake',12)) return json({ok:false,message:'Too many requests today. Please try again tomorrow or use the contact email.'},429);
  const id=crypto.randomUUID(), secret=token(), hash=await sha(secret), now=new Date().toISOString();
  const expiry=new Date(Date.now()+(kind==='consultations'?180:30)*DAY).toISOString();
  if(kind==='consultations') {
@@ -63,7 +63,7 @@ async function withdraw(request,env) {
  if(!ORIGINS.has(request.headers.get('origin'))) return json({ok:false,message:'Open this form from the MEKreflect website.'},403);
  const data=await boundedBody(request,2000);
  if(typeof data.token!=='string'||!/^[a-f0-9]{64}$/.test(data.token)) return json({ok:false,message:'Enter the withdrawal code shown with your receipt.'},400);
- if(!await rateLimit(request,env)) return json({ok:false,message:'Please try again tomorrow.'},429);
+ if(!await rateLimit(request,env,'withdrawal',60)) return json({ok:false,message:'Please try again tomorrow.'},429);
  const hash=await sha(data.token);
  await env.DB.batch([env.DB.prepare('DELETE FROM consultations WHERE withdrawal_hash=?').bind(hash),env.DB.prepare('DELETE FROM subscriptions WHERE withdrawal_hash=?').bind(hash)]);
  return json({ok:true,message:'Any request associated with this code has been removed. No email will be sent.'});

@@ -30,6 +30,23 @@ test('invalid input, consent, bot field and foreign origins do not persist',asyn
 test('actual SQLite atomic limit stops the thirteenth valid request',async()=>{
  const env=database();for(let n=0;n<12;n++)assert.equal((await worker.fetch(post('subscriptions',good),env,{})).status,201);assert.equal((await worker.fetch(post('subscriptions',good),env,{})).status,429);assert.equal(env.sql.prepare('SELECT COUNT(*) n FROM subscriptions').get().n,12);
 });
+test('exhausting intake does not prevent a valid withdrawal on the same network',async()=>{
+ const env=database();let receipt;
+ for(let n=0;n<12;n++){
+  const response=await worker.fetch(post('subscriptions',good),env,{});
+  assert.equal(response.status,201);receipt=await response.json();
+ }
+ assert.equal((await worker.fetch(post('subscriptions',good),env,{})).status,429);
+ const removed=await worker.fetch(post('withdraw',{token:receipt.withdrawal.token}),env,{});
+ assert.equal(removed.status,200);
+ assert.equal(env.sql.prepare('SELECT COUNT(*) n FROM subscriptions').get().n,11);
+});
+test('withdrawal has its own bounded allowance without consuming intake allowance',async()=>{
+ const env=database(),missing='0'.repeat(64);
+ for(let n=0;n<60;n++)assert.equal((await worker.fetch(post('withdraw',{token:missing}),env,{})).status,200);
+ assert.equal((await worker.fetch(post('withdraw',{token:missing}),env,{})).status,429);
+ assert.equal((await worker.fetch(post('subscriptions',good),env,{})).status,201);
+});
 test('body stream size, JSON content type and malformed JSON are bounded',async()=>{
  const env=database();assert.equal((await worker.fetch(post('consultations',{...good,message:'x'.repeat(17000)}),env,{})).status,413);
  assert.equal((await worker.fetch(post('consultations',good,'https://mekreflect.com',{'Content-Type':'text/plain'}),env,{})).status,415);

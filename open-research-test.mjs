@@ -4,8 +4,8 @@ import {openStudies} from './open-research.mjs';
 let checks=0;
 const test=(condition, message)=>{assert.ok(condition,message);checks++;};
 const catalogue=JSON.parse(await readFile('dist-company/data/open-research.json','utf8'));
-test(catalogue.studies.length===4,'Four reviewed source-derived cases');
-test(new Set(openStudies.map(s=>s.id)).size===4,'Distinct case URLs');
+test(catalogue.studies.length===6,'Six reviewed source-derived cases');
+test(new Set(openStudies.map(s=>s.id)).size===6,'Distinct case URLs');
 for(const s of openStudies){
   const html=await readFile(`dist-company/case-studies/${s.id}/index.html`,'utf8');
   for(const value of [s.title,s.question,s.evidence,s.limits])test(html.includes(value.replaceAll('&','&amp;')),'Case preserves its evidence boundary');

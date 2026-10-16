@@ -49,6 +49,30 @@ export const openStudies = [
     limits: 'Original artwork, personal stories and binary releases are not included. Users must have rights to their own inputs and review the third-party dependency licenses.',
     next: 'Evaluate repeatability, rendering time and accessibility of visual explanations across different input formats.',
     code: repository + '/tree/main/creative-tools', related: '/method/'
+  },
+  {
+    id: 'telemetry-context-boundaries', title: 'When a missing byte becomes a believable answer', label: 'Telemetry research',
+    question: 'Can a parser turn an incomplete response into a plausible measurement by joining unrelated context?',
+    origin: 'I explored diagnostic software to understand when a response contains usable information. The important failure was a short frame borrowing bytes from the next response and producing a believable RPM value.',
+    method: 'I extracted the existing Java conversion module and gave it synthetic responses. I checked each response boundary before converting its bytes, then tested whether a complete response could still be read after an incomplete one.',
+    workflow: ['Receive an individual synthetic response', 'Preserve its frame boundary and validate every byte', 'Convert supported fields or return unresolved', 'Read a complete response and inspect recovery'],
+    implementation: 'The public Java module retains seven existing conversion methods. The repair isolates response lines, validates exact hexadecimal byte tokens, checks diagnostic-code payload lengths and bounds response size. The demonstration and assertion harness are new.',
+    evidence: 'Seventeen Java assertions pass. Before the correction, a truncated frame followed by a different response produced 1680.25 RPM. The corrected parser returns unresolved for that input and reads the next complete test frame as 2048 RPM.',
+    limits: 'All input is synthetic and local. CAN framing, multiple ECU arbitration, transport and physical diagnosis are outside this parser. The result demonstrates a parsing boundary rather than a tested vehicle application.',
+    next: 'Expand the supported protocol only against documented frame contracts and independent reference cases, keeping transport, decoding and interpretation separately testable.',
+    code: repository + '/tree/main/telemetry-parser', related: '/research/context-handoffs/'
+  },
+  {
+    id: 'current-evidence-gates', title: 'A reference is not a current observation', label: 'Evidence and expiry research',
+    question: 'What must a source record contain before it can support a current operational decision?',
+    origin: 'In Signal I separated discovering a reference from knowing whether a source can support a current decision. I made permission, freshness and quantity explicit in the software because each answers a different question.',
+    method: 'I extracted the existing decision gate and tested invented records at expiry, with missing permission, malformed dates and quantities the runtime cannot represent exactly. The gate evaluates supplied evidence without refreshing or inventing it.',
+    workflow: ['Read the source label and explicit caller policy', 'Validate the observation time and source-defined expiry', 'Check quantity, price and exact permission flags', 'Return eligibility with expired or unsupported records excluded'],
+    implementation: 'The JavaScript module keeps the original source-host policy, strict flags, fixture opt-in and 60-second clock-skew rule. Publication repairs require valid canonical UTC timestamps, reject source URLs containing credentials and require safe integer quantities.',
+    evidence: 'Nine Node tests pass. Three tests reproduced failures in the original module before correction. The runnable demonstration distinguishes a current synthetic record, an expired record and a record with unknown quantity.',
+    limits: 'A supplied authorization flag is an assertion, and a hostname match does not verify a commercial agreement or a live feed. This local module performs no network requests, reservations, payments or health decisions.',
+    next: 'Connect server-owned source policies to independently verified observations and measure both incorrect acceptance and useful records that get rejected.',
+    code: repository + '/tree/main/evidence-gates', related: '/research/evidence-decisions/'
   }
 ];
 
