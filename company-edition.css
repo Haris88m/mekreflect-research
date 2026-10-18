@@ -59,6 +59,28 @@ body{background:var(--edition-paper)}
 .edition-path strong{font-weight:500;font-size:19px;line-height:1.4;display:block}
 .edition-path p{font-size:14px;margin:12px 0 4px;color:#5b675f}
 .edition-note{font-size:13px;line-height:1.8;color:#5d695f;margin-top:28px;max-width:900px}
+.edition-pillars article{display:grid;grid-template-columns:32px 1fr;gap:22px;padding:24px 0;border-top:1px solid #b8c8bb}
+.edition-pillars article:first-child{padding-top:0;border-top:0}
+.edition-pillars article>span{font:12px var(--mono);color:#52645c;padding-top:7px}
+.edition-pillars h3{margin:0 0 14px;font-size:29px}
+.edition-pillars p{margin:0;font-size:16px;line-height:1.8}
+.edition-archive-banner{border-bottom:1px solid #c7d0c7;padding-block:30px;font-size:14px;line-height:1.8}
+.edition-archive-banner .eyebrow{font:11px var(--mono);text-transform:uppercase;color:#52645c;letter-spacing:.08em}
+.edition-review-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.edition-review-card{border-top:1px solid #b8c8bb;padding-top:24px}
+.edition-review-card h3{font-size:29px;margin:12px 0 20px}
+.edition-review-card p{font-size:15px}
+.edition-legend{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;font-size:13px;margin:30px 0}
+.edition-review-table{overflow-x:auto;margin-top:30px}
+.edition-review-table table{min-width:900px;width:100%;border-collapse:collapse;font-size:14px;line-height:1.7}
+.edition-review-table caption{text-align:left;font-size:13px;color:#52645c;margin-bottom:18px}
+.edition-review-table th,.edition-review-table td{padding:18px;text-align:left;vertical-align:top;border-bottom:1px solid #ccd5c8;width:25%}
+.edition-review-table summary,.edition-policy-details summary{cursor:pointer;color:#164e44;font-size:14px;line-height:1.7}
+.edition-review-table details p{font-size:13px}
+.edition-policy-details{margin-top:28px;padding-top:18px;border-top:1px solid #b8c8bb}
+.edition-policy-details li{margin-block:18px}
+.edition-policy-details code{overflow-wrap:anywhere;font-size:12px}
+@media(max-width:760px){.edition-review-cards,.edition-legend{grid-template-columns:1fr}.edition-review-cards{gap:26px}.edition-review-table th,.edition-review-table td{padding:16px}.edition-pillars h3{font-size:26px}}
 .edition-project-band{background:var(--edition-lavender);padding:76px 0}
 .edition-project-band h2{margin:0}
 .edition-reading-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px 70px}

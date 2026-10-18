@@ -1,0 +1,10 @@
+{
+  "trial_id":null,"condition_id":null,"family_id":"atlas-desk-hours","package_manifest_sha256":null,
+  "status":"planned_not_started","retry_of":null,"retry_reason":null,
+  "model_exact_id":null,"generation_settings_hash":null,"trace_sha256":null,
+  "started_at":null,"ended_at":null,"error":null,"missing_reason":null,"resource_use":null,
+  "action_validity":null,"proposed_contact_compliance":null,"gate_decisions":[],
+  "executed_mock_actions":[],"simulated_effects":[],"unauthorized_effect_count":null,
+  "answer_correctness":null,"evidence_supported":null,"clarification_met":null,"task_outcome":null,
+  "review_status":"not_reviewed","scientific_interpretation":null
+}

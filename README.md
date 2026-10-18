@@ -1,19 +1,19 @@
 # MEKreflect research platform
 
-MEKreflect is an early-stage AI research and development company led by Haris Mekic. We explore practical AI use, system behaviour and useful tools across providers. This repository publishes the company website, its public-data importer, and its Cloudflare research and consultation backend.
+MEKreflect aims to make AI evaluations more useful for real decisions. We are developing methods to assess benchmark evidence and help teams turn it into testable operational policies. The three pillars are benchmark evidence assessment, evaluation design and reproducibility, and evidence-to-policy translation. Becoming a benchmark for benchmarks is an ambition, not an established ranking or certification capability.
 
-[MEKreflect](https://mekreflect.com/) · [Cloudflare mirror](https://mekreflect.pages.dev/) · [Research method](https://mekreflect.pages.dev/method/) · [Observed handoffs](https://mekreflect.pages.dev/evaluations/)
+[MEKreflect](https://mekreflect.com/) · [Research programme](https://mekreflect.com/research/) · [Company direction](MEKREFLECT-DIRECTION.md)
 
 ## What is here
 
-The homepage explains the company purpose and current stage. About, Research and Projects provide separate entry points. Public research begins with one incident-led case, its source investigation, proposed synthetic test and follow-up. Projects retain their own historical implementation evidence. Dated external AI evaluation data and a public arXiv reading queue retain their original attribution; they are not MEKreflect research results.
+The homepage, About and Research explain the company programme and current stage. A documentary benchmark-evidence review is separate from the one continuing incident-led case. The authored helper-authorization protocol has local scripted checks and bounded code review, with zero model trials. Personal-project records are retained as an unobtrusive, noindex historical archive; they are excluded from the current research feed and company evidence claims.
 
 `company-edition.mjs` runs after the preserved research platform installers, replacing the company entry pages and shared navigation while retaining existing evidence routes and artifacts. `company-edition.css` supplies the original company layout. Inspect is reviewed as a candidate evaluation framework and has not been used. No SDK runtime experiments or independent reproductions have been performed.
 
-- A dependency-free Node renderer builds 45 editorial pages and machine-readable public data.
-- The homepage journal presents one continuing case, beginning with the 14 October agent-fleet report and followed by our investigation, proposed synthetic test and dated updates. Projects remain in their separate existing area.
+- A dependency-free Node renderer builds 46 editorial pages and explicitly allowlisted public data.
+- The homepage introduces the documentary benchmark review and one continuing incident case. Personal-project research is not part of this company positioning.
 - Six earlier preparation notes remain at their original URLs as archived supporting records, outside the journal feed and sitemap. The broader 15-task protocol and exact artifacts remain accessible; unrelated SDK/vendor examples are not incident evidence or repairs. No incident-related test or independent reproduction has run.
-- Six source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission, visual production, telemetry parsing and current evidence gates.
+- Six earlier implementation case studies remain intact in the historical archive, outside the current research programme and feed.
 - Historical observations retain their denominators and source links in the project and evaluation areas. The homepage uses a labelled conceptual development diagram rather than performance metrics. The contact backend keeps withdrawal available under its own allowance when intake is exhausted.
 - An explicit release allowlist and content hashes keep private work outside the release.
 - An Epoch AI data importer validates the archive and preserves attribution, source dates, missing values and confidence bounds.
@@ -21,7 +21,7 @@ The homepage explains the company purpose and current stage. About, Research and
 - A Cloudflare Worker and D1 schema support consultation requests, pending email interest, withdrawal tokens, retention and daily arXiv metadata retrieval.
 - The backend tests use real in-memory SQLite and synthetic records. They do not call production services or models.
 
-The implementation is AI-assisted. I define the operational questions, provide context, direct development and review the results. This is an inspectable working implementation, not a claim of enterprise adoption or general model safety.
+The implementation is AI-assisted and founder-led. Software checks, documentary analysis and model evaluations remain distinct evidence states. No enterprise adoption, validated policy or general model-safety claim follows from publication.
 
 ## Run it locally
 

@@ -1,0 +1,16 @@
+{
+  "status":"UNAPPROVED_TEMPLATE_DO_NOT_RUN",
+  "package_version":"0.1.0",
+  "manifest_sha256":null,
+  "family_count":1,
+  "model_trials_started":0,
+  "provider":null,"model_exact_id":null,"model_revision":null,"generation_settings":null,
+  "tool_and_prompt_versions":null,"execution_environment_and_isolation":null,
+  "trial_order":[],"repetitions_per_condition":null,"repetition_rationale":null,
+  "limits":{"tokens_per_trial":null,"seconds_per_trial":null,"total_cost_currency":null,"total_cost_cap":null},
+  "retention_and_redaction":null,"reviewer":null,"owner_authorization_reference":null,
+  "register_fields":["trial_id","condition_id","planned_at","started_at","ended_at","status","retry_of","retry_reason","exact_manifest_hash","model_settings_hash","trace_hash","cost","error","missing_reason"],
+  "allowed_statuses":["planned_not_started","started","completed","invalid","failed","missing"],
+  "stop_rules":["Record integrity failure","Unexpected capability or data exposure","Any approved resource cap reached"],
+  "scope":"Fictional data and mock effects only; no outside recipients, real targets, credentials or incident reproduction."
+}

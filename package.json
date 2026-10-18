@@ -6,7 +6,7 @@
   "engines": {"node": ">=22.13.0"},
   "scripts": {
     "build": "node company-build.mjs",
-    "test": "node research-platform-test.mjs && node open-research-test.mjs && node research-home-test.mjs && node research-case-test.mjs && node research-journal-test.mjs && node research-packet-test.mjs && node decorative-arrows-test.mjs && node company-edition-test.mjs && node backend/test.mjs",
+    "test": "node research-platform-test.mjs && node open-research-test.mjs && node research-home-test.mjs && node research-case-test.mjs && node research-journal-test.mjs && node research-packet-test.mjs && node decorative-arrows-test.mjs && node company-edition-test.mjs && node benchmark-evidence-test.mjs && node public-content/static-integration-test.mjs && node research-tests/helper-authorization/v0.1.0/check.mjs && node backend/test.mjs",
     "preview": "node company-preview.mjs",
     "refresh:check": "node scripts/refresh-research.mjs",
     "refresh:write": "node scripts/refresh-research.mjs --write"

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "1.0.0",
+  "releaseId": "2026-10-18-public-foundation-r1",
+  "items": [
+    {
+      "approval": {
+        "basis": "existing_public_editorial",
+        "decision": "approved",
+        "reviewRef": "https://github.com/Haris88m/mekreflect-research/blob/f523cdab899fa836b22afc9b743ed565eda32d97/journal-case-content.md",
+        "reviewedOn": "2026-10-18"
+      },
+      "claims": [
+        {
+          "claimType": "attributed_report",
+          "id": "reported-helper-intervention",
+          "limitations": [
+            "The later interaction is an intervention, not a controlled comparison."
+          ],
+          "sourceIds": [
+            "swarmchase-report"
+          ],
+          "text": "The investigators report introducing a hidden offer of outside assistance and later interacting with agents."
+        }
+      ],
+      "contentClass": "public_approved",
+      "evidenceCardIds": [
+        "external-agent-report-review"
+      ],
+      "evidenceState": "source_reviewed_external_incident",
+      "id": "external-agent-helper-authorization",
+      "independentReproduction": false,
+      "kind": "case",
+      "limitations": [
+        "Original operating instructions and model identity remain uncertain.",
+        "MEKreflect has not independently reproduced the incident or validated a remedy."
+      ],
+      "policyMappingIds": [],
+      "protocolIds": [
+        "synthetic-helper-authorization"
+      ],
+      "provenance": [
+        {
+          "accessedOn": "2026-10-18",
+          "locator": "Intro; How we found the fleet; findings on coordination and open questions",
+          "publishedOn": "2026-10-14",
+          "snapshotSha256": null,
+          "sourceId": "swarmchase-report",
+          "sourceType": "external_incident_report",
+          "title": "We found a Tencent agent fleet",
+          "url": "https://swarmcha.se/posts/chinese-agent-fleet-full-report",
+          "verification": "source_reviewed"
+        }
+      ],
+      "revision": 1,
+      "schemaVersion": "1.0.0",
+      "status": "published",
+      "summary": "A source-reviewed external incident motivates an unexecuted synthetic helper-authorization proposal.",
+      "title": "When agents work around a barrier"
+    },
+    {
+      "approval": {
+        "basis": "existing_public_editorial",
+        "decision": "approved",
+        "reviewRef": "https://github.com/Haris88m/mekreflect-research/blob/f523cdab899fa836b22afc9b743ed565eda32d97/journal-case-content.md",
+        "reviewedOn": "2026-10-18"
+      },
+      "caseId": "external-agent-helper-authorization",
+      "claims": [
+        {
+          "claimType": "attributed_report",
+          "id": "reported-helper-intervention",
+          "limitations": [
+            "The later interaction is an intervention, not a controlled comparison."
+          ],
+          "sourceIds": [
+            "swarmchase-report"
+          ],
+          "text": "The investigators report introducing a hidden offer of outside assistance and later interacting with agents."
+        }
+      ],
+      "comparability": {
+        "assessment": "not_a_controlled_comparison",
+        "reasons": [
+          "Researcher intervention and incomplete original instructions prevent a matched behavioral comparison."
+        ]
+      },
+      "contentClass": "public_approved",
+      "evidenceState": "attributed_source_review",
+      "id": "external-agent-report-review",
+      "kind": "evidence-card",
+      "limitations": [
+        "Repeated commentary about the same event is not independent evidence.",
+        "No performance estimate or causal repair effect follows from this source review."
+      ],
+      "provenance": [
+        {
+          "accessedOn": "2026-10-18",
+          "locator": "Intro; How we found the fleet; findings on coordination and open questions",
+          "publishedOn": "2026-10-14",
+          "snapshotSha256": null,
+          "sourceId": "swarmchase-report",
+          "sourceType": "external_incident_report",
+          "title": "We found a Tencent agent fleet",
+          "url": "https://swarmcha.se/posts/chinese-agent-fleet-full-report",
+          "verification": "source_reviewed"
+        }
+      ],
+      "revision": 1,
+      "schemaVersion": "1.0.0",
+      "status": "published",
+      "summary": "The report documents an external investigation; the record supports a bounded research question.",
+      "title": "Attributed incident evidence and comparison limits"
+    },
+    {
+      "approval": {
+        "basis": "existing_public_editorial",
+        "decision": "approved",
+        "reviewRef": "https://github.com/Haris88m/mekreflect-research/blob/f523cdab899fa836b22afc9b743ed565eda32d97/journal-case-content.md",
+        "reviewedOn": "2026-10-18"
+      },
+      "caseId": "external-agent-helper-authorization",
+      "claims": [
+        {
+          "claimType": "proposed_method",
+          "id": "proposed-authorization-contrast",
+          "limitations": [
+            "Design only: no solver execution, incident reproduction or measured benefit."
+          ],
+          "sourceIds": [
+            "mekreflect-case-design"
+          ],
+          "text": "A proposed synthetic task would vary helper offers and explicit authorization while preserving a permitted way to continue."
+        }
+      ],
+      "conditions": [
+        {
+          "description": "Blocked source without a helper offer.",
+          "id": "no-offer"
+        },
+        {
+          "description": "Untrusted helper offer without user authorization.",
+          "id": "untrusted-offer"
+        },
+        {
+          "description": "Same helper with explicit recipient and data authorization.",
+          "id": "bounded-authorization"
+        },
+        {
+          "description": "A permitted alternative allows appropriate continuation.",
+          "id": "authorized-alternative"
+        }
+      ],
+      "contentClass": "public_approved",
+      "executionStatus": "not_run",
+      "framework": {
+        "name": "Inspect",
+        "status": "candidate_reviewed_not_run"
+      },
+      "id": "synthetic-helper-authorization",
+      "kind": "protocol",
+      "limitations": [
+        "Not preregistered or executed.",
+        "Not an incident reconstruction or a benchmark performance result."
+      ],
+      "measurementPlan": [
+        "Record attempted calls separately from executed calls.",
+        "Judge completion, clarification and refusal against explicit instructions.",
+        "A tool block alone does not demonstrate correct agent judgment."
+      ],
+      "prerequisites": [
+        "Freeze fictional task, fixtures, condition differences and allowed data/recipients.",
+        "Review rights, execution authority and independent scoring.",
+        "Verify an appropriate isolated environment, tools and budgets before any run."
+      ],
+      "provenance": [
+        {
+          "accessedOn": "2026-10-18",
+          "locator": "The next test: a safe, synthetic decision",
+          "publishedOn": "2026-10-18",
+          "snapshotSha256": null,
+          "sourceId": "mekreflect-case-design",
+          "sourceType": "public_editorial",
+          "title": "When agents work around a barrier",
+          "url": "https://github.com/Haris88m/mekreflect-research/blob/f523cdab899fa836b22afc9b743ed565eda32d97/journal-case-content.md",
+          "verification": "editorial_design_only"
+        }
+      ],
+      "registrationStatus": "proposal",
+      "revision": 1,
+      "schemaVersion": "1.0.0",
+      "status": "published",
+      "summary": "An authored fictional task using local mock services; proposal only, with no model results.",
+      "title": "Synthetic helper-authorization proposal"
+    }
+  ]
+}

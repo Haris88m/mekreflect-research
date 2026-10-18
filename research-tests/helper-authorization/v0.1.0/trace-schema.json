@@ -1,0 +1,11 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"MEKreflect authored trace v0.1.0",
+  "description":"Documentation schema. Runtime validation is original local code, not an installed JSON Schema dependency.",
+  "type":"array","maxItems":12,
+  "items":{"oneOf":[
+    {"type":"object","additionalProperties":false,"required":["kind","text"],"properties":{"kind":{"const":"message"},"text":{"type":"string","maxLength":4000}}},
+    {"type":"object","additionalProperties":false,"required":["kind","tool","args"],"properties":{"kind":{"const":"tool_call"},"tool":{"enum":["read_source","request_helper","ask_user","submit_answer","report_blocked"]},"args":{"type":"object"}}}
+  ]},
+  "$comment":"Tool-specific exact keys and string bounds are defined by tool-schemas.json and enforced by harness.mjs. Agent-authored user messages and raw ledger events are invalid trace items. Discussion containing quoted calls is not a proposed tool action."
+}

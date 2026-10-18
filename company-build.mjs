@@ -3,7 +3,9 @@ import { createHash } from 'node:crypto';
 import { research, cases } from './company-data.mjs';
 import { installResearchPlatform } from './research-platform.mjs';
 import { renderDecorativeArrows } from './decorative-arrows.mjs';
-import { installCompanyEdition } from './company-edition.mjs';
+import { installCompanyEdition, companyMission } from './company-edition.mjs';
+import { installPublicContent } from './public-content/static-integration.mjs';
+import { installHelperProtocolArtifacts } from './helper-protocol-artifacts.mjs';
 
 // A distinct release tree prevents withdrawn pages from surviving an incremental build.
 // The former builder and dist remain intact for reference and rollback.
@@ -17,7 +19,7 @@ const arrow = '<span aria-hidden="true">↗</span>';
 const nav = [['/method/','Approach'],['/research/','Research'],['/case-studies/','Case studies'],['/collaborate/','Work with us'],['/about/','About']];
 const wordmark = 'MEK<em>reflect</em><i aria-hidden="true"></i>';
 const link = (href,label,primary=false) => `<a class="${primary?'button':'text-link'}" href="${href}">${label} ${arrow}</a>`;
-const mission = 'MEKreflect is an early-stage AI research and development company exploring practical use, system behaviour and useful tools across AI providers.';
+const mission = companyMission;
 function page(title, description, path, body, noindex=false) {
   const canonicalPath=path==='/404/'?'/404.html':path;
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | MEKreflect</title><meta name="description" content="${esc(description)}"><meta name="theme-color" content="#FAF8F3">${noindex?'<meta name="robots" content="noindex">':''}<link rel="canonical" href="${base}${canonicalPath}"><meta property="og:title" content="${esc(title)} | MEKreflect"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${base}${canonicalPath}"><meta property="og:type" content="website"><meta property="og:image" content="${base}/assets/company-social.svg"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/company-mark.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/company.css?v=20261016"><script src="/assets/company.js?v=20261016" defer></script><script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@type':'Organization',name:'MEKreflect',url:base,description:mission,founder:{'@type':'Person',name:'Haris Mekic'},sameAs:['https://www.linkedin.com/company/mekreflect/']}).replace(/</g,'\\u003c')}</script></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="shell header-inner"><a class="wordmark" href="/" aria-label="MEKreflect home">${wordmark}</a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Main navigation">${nav.map(([url,label])=>`<a href="${url}"${path.startsWith(url)?' aria-current="page"':''}>${label}</a>`).join('')}${link('/contact/','Begin',true)}</nav></div></header><main id="main">${body}</main><footer class="footer"><div class="shell"><div class="footer-top"><a class="wordmark" href="/" aria-label="MEKreflect home">${wordmark}</a><p>Operational knowledge.<br>Research with purpose.<br>People who carry it forward.</p>${link('/contact/','Start a conversation')}</div><div class="footer-bottom"><p>© 2026 MEKreflect. Led by Haris Mekic.</p><nav aria-label="Footer"><a href="/transparency/">Evidence and privacy</a><a href="/llms.txt">For AI readers</a><a href="https://www.linkedin.com/company/mekreflect/">LinkedIn</a></nav></div></div></footer></body></html>`;
@@ -78,6 +80,8 @@ add('llms.txt',`# MEKreflect\n\n${mission}\n\nFounder-led consultancy and applie
 add('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
 installResearchPlatform(files,{page,head});
 installCompanyEdition(files,{page});
+await installPublicContent(files);
+installHelperProtocolArtifacts(files);
 for(const [name,content] of files)if(name.endsWith('.html'))files.set(name,renderDecorativeArrows(content));
 // Confirmed public company addresses, replacing the earlier generic address.
 for(const [name,content] of files) if(typeof content==='string') files.set(name,content.replaceAll('hello@mekreflect.com','info@mekreflect.com').replaceAll('pending email interests for up to 90 days','pending email interests for up to 30 days').replaceAll('required maxlength="180"','required maxlength="160"').replaceAll('minlength="20" maxlength="200"','minlength="64" maxlength="64" pattern="[a-fA-F0-9]{64}"').replaceAll('<button class="button secondary" type="submit">','<button class="button secondary" type="submit">').replaceAll('<button class="button secondary">','<button class="button secondary" type="submit">').replaceAll('<p>© 2026 MEKreflect. Led by Haris Mekic.</p>','<p>© 2026 MEKreflect. Led by Haris Mekic.<br><a href="mailto:info@mekreflect.com">info@mekreflect.com</a> · <a href="mailto:harism@mekreflect.com">harism@mekreflect.com</a></p>'));

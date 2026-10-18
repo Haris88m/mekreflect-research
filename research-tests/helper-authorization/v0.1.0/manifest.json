@@ -1,0 +1,105 @@
+{
+  "package": "mekreflect-helper-authorization",
+  "version": "0.1.0",
+  "date": "2026-10-18",
+  "family_count": 1,
+  "model_trials": 0,
+  "status": "authored_software_checks_only",
+  "excluded_generated_files": [
+    "manifest.json",
+    "manifest.sha256",
+    "CHECK-RESULT.json"
+  ],
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3252,
+      "sha256": "1f3d9df3358809c2bd3384cb4e6db078e0f377ad6f71892fc4567b486a7fc9fe"
+    },
+    {
+      "path": "PROTOCOL.md",
+      "bytes": 9227,
+      "sha256": "060cf413c8692b1587333212f103534e5cd4c6048e519e9ca4df6e78b6e799ae"
+    },
+    {
+      "path": "fixtures.json",
+      "bytes": 4297,
+      "sha256": "6e1727fcda9e46ac483f8a1984c381006cc621ba9ffa8e2813334d7c9313d2c6"
+    },
+    {
+      "path": "oracle.json",
+      "bytes": 485,
+      "sha256": "21aa638470c288c8a24b2edccc9e8552700caf8f1816742f9f0366dc8811014d"
+    },
+    {
+      "path": "trace-schema.json",
+      "bytes": 966,
+      "sha256": "494fb7d47d91e52fe3b113c6554f7ec9f9d8d4fdcf97751246abbaca57d2adf3"
+    },
+    {
+      "path": "tool-schemas.json",
+      "bytes": 1896,
+      "sha256": "be6850e79f2d61c8b39809bf0d2595529494502ae96c123b41c91c6e674272a1"
+    },
+    {
+      "path": "schema.mjs",
+      "bytes": 4697,
+      "sha256": "0728af0ce10f380a272e0b2d8a3b6cd62055b46c204a0f43ea1d5e301fcd5efb"
+    },
+    {
+      "path": "harness.mjs",
+      "bytes": 7122,
+      "sha256": "8a1093605794845be1f75254c08a9d9b9303e190df3e2a465cf95437ef440b1e"
+    },
+    {
+      "path": "scorer.mjs",
+      "bytes": 11437,
+      "sha256": "814dc66d3e79b55fe278065540d5e484894cc9e29ae50160868a23a4ba116629"
+    },
+    {
+      "path": "controls.mjs",
+      "bytes": 4125,
+      "sha256": "a209c8bcb5cb1c06e73e0c41a5eccc85d24636416ce3734e13ad158a069b3f2c"
+    },
+    {
+      "path": "check.mjs",
+      "bytes": 12256,
+      "sha256": "937e6386d9a06ca456a54ddd3d932221d8270c0a343a134938d1362cde16282f"
+    },
+    {
+      "path": "inspect-adapter.draft.mjs",
+      "bytes": 1375,
+      "sha256": "885ab5357687525b37f63afe0fd5034ee254830b56e0d33104d322a05e28fc44"
+    },
+    {
+      "path": "run-manifest.template.json",
+      "bytes": 1154,
+      "sha256": "ee27400b45cbc58033c0b03fc6f1a6e2b642ce2cfa55222be7bc604a66b91ae5"
+    },
+    {
+      "path": "result-row.template.json",
+      "bytes": 677,
+      "sha256": "66079d0f93d374ef47bc6a5d5dd3541c9d70eaee60949906cd673971a8894c12"
+    },
+    {
+      "path": "LIMITATIONS.md",
+      "bytes": 2360,
+      "sha256": "d61683c386c2958a8e524cb49896790164f985e4b484b9582a1eaf36aa887e70"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1342,
+      "sha256": "ad12599e5336a86d27ab8ae592486eb74bd1ddb9bc6e446e4284929ebb16e206"
+    },
+    {
+      "path": "REVIEW.md",
+      "bytes": 1919,
+      "sha256": "ee6391456a69dc11405f120aa4c85250e624dd7b46c05ea4be1004f82b36a945"
+    },
+    {
+      "path": "freeze.mjs",
+      "bytes": 1870,
+      "sha256": "c239c0ac2ef2dafb9ddbb788741f695caff489f3df7db4e1591083267f4118f0"
+    }
+  ]
+}

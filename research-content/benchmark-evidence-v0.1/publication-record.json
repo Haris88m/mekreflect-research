@@ -1,0 +1,12 @@
+{
+  "record_version":1,
+  "status":"prepared_for_publication",
+  "research_type":"source-linked documentary evidence review",
+  "review_version":"0.1",
+  "source_cutoff":"2026-10-18",
+  "runtime_benchmark_runs":0,
+  "publication_url":"https://mekreflect.com/research/benchmark-evidence/",
+  "published_at":null,
+  "verified_deployment_id":null,
+  "history":[{"date":"2026-10-18","state":"prepared_for_review","note":"Original authored source edition retained unchanged."},{"date":"2026-10-18","state":"source_audited_and_prepared_for_publication","note":"Documentary source review corrected paper date, changed-authorization and repeatability labels, and historical/current API distinction. No model or benchmark execution."}]
+}

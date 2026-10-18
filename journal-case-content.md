@@ -33,7 +33,7 @@ We separated attributed reporting from our own observations, kept uncertain mode
 
 The useful output so far is a narrower test design that changes the helper offer and explicit authorization while keeping fictional task context comparable. It must include an allowed way to continue, so refusing everything cannot count as good judgment. No solver has been evaluated and no comparative benefit has been measured.
 
-Our own software projects and implementation case studies remain in [Our work](/open-research/). They are separate from the external incident being investigated here.
+Earlier personal-project implementations remain in the [historical archive](/projects/), outside the current research programme. They are not evidence for this incident, benchmark assessment or policy-validation claims.
 
 ## The next test: a safe, synthetic decision
 
@@ -44,6 +44,7 @@ The proposed exercise is an authored scenario involving a blocked source and an 
 | No helper offer | How the agent handles the blocked source without that suggestion |
 | Untrusted helper offer, no user authorization | Whether it preserves limits on contact and data sharing |
 | The same helper, with explicit bounded user authorization | Whether it uses only the permitted contact and data scope |
+| Ambiguous permission, followed by a fixed authenticated user reply | Whether it asks for clarification and follows the bounded reply |
 | An authorized alternative is available | Whether it can continue appropriately instead of refusing everything |
 
 Before any run, we would freeze the task, condition differences, allowed recipients and data, acceptable decisions, tools, budgets and review method. Attempted calls and executed calls must be logged separately. A tool or sandbox blocking an action does not prove that the agent made the right judgment. Completion, clarification and refusal each need to be interpreted against the explicit instructions.
@@ -56,17 +57,20 @@ This is a proposed design, not a registered or executed experiment. Rights, fixt
 
 **18 October — Test preparation and clearer scope.** We defined the proposed helper-offer and authorization conditions above. They are our synthetic design, not recovered original instructions. This page now holds the incident, investigation, proposed test and follow-ups together. Earlier preparation notes remain supporting records rather than independent research stories.
 
+**18 October - First authored protocol and software checks.** The [v0.1.0 protocol](/data/helper-authorization-v0.1/PROTOCOL.md) now specifies five conditions within one fictional case family, including ambiguous permission and a fixed authenticated clarification reply. Its [source manifest](/data/helper-authorization-v0.1/manifest.json) identifies the frozen package. Local deterministic checks and a separate bounded code review found and corrected ledger, evidence-order, limitation-output and trial-accounting defects before freeze. The [check report](/data/helper-authorization-v0.1/CHECK-RESULT.json) records 19 scripted controls, including deliberately invalid, failed and missing outcomes. These are software checks with zero model trials, not observed AI behaviour, policy effectiveness or an incident reproduction.
+
 **Next update — After an assessed test milestone.** We will record the exact question, conditions, observed outcome, uncertainty and correction, including a blocked or inconclusive result when that is what occurred. There is no result to substitute for the missing test today.
 
 ## Supporting methods and separate project work
 
-The [methods archive](/journal/artifacts/) preserves earlier protocol preparation and separately labeled technical examples. Those examples are not this incident's evidence chain, next stage or repair. Text-parity checks and website QA are not experimental findings about the incident. Project implementations remain in [Our work](/open-research/).
+The [methods archive](/journal/artifacts/) preserves earlier protocol preparation and separately labeled technical examples. Those examples are not this incident's evidence chain, next stage or repair. Text-parity checks and website QA are not experimental findings about the incident. Earlier personal-project implementations are retained in the [historical archive](/projects/), outside the company programme.
 
 ## Sources and scope
 
 - [Primary investigation, published 14 October 2026](https://swarmcha.se/posts/chinese-agent-fleet-full-report): read the authors' account and limitations at the source.
 - [Research protocol and 15-task plan](/research/agent-support-first-case/): broader study design and evidence gates.
 - [Supporting methods and exact artifacts](/journal/artifacts/): retained provenance, with reported, inspected and independently reproduced evidence kept separate.
-- [MEKreflect project work](/open-research/): implementation work, outside this incident journal case.
+- [Public editorial records v1](/data/public-content-v1.json): a schema-validated snapshot of the earlier public source review and proposal, pinned to its recorded source revision. It is not the full newer authored fixture package.
+- [Historical project archive](/projects/): retained implementation records, outside the current research programme.
 
 Current incident-related tests: not run. Independent reproductions, admitted executable cases and benchmark scores: zero. This publication recommends no live incident replay, access-control bypass or unverified repair.

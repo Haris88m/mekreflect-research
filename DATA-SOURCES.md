@@ -7,3 +7,5 @@ arXiv metadata is retrieved through the arXiv API. See https://info.arxiv.org/he
 Regional and policy notes link to their official European Commission, Eurostat and JRC sources. Those links and bounded descriptions do not imply that MEKreflect produced the underlying official statistics.
 
 OBSERVER8 observations are original bounded research summaries. They do not form part of Epoch AI's benchmark data. No affiliation, commissioning or endorsement by Epoch AI, arXiv or the other referenced institutions is claimed.
+
+The v0.1 benchmark-evidence review is original MEKreflect documentary analysis of cited primary papers and official documentation. It retains versioned paper identities, source locators and mutable repository/page limitations. It does not redistribute paper bodies, copied figures or logos, reproduce performance, rank models, certify systems or claim novelty over BenchmarkCards and other prior work. Its original reviewed Markdown and JSON remain unchanged; publication state is tracked separately. The helper-authorization fixtures and code are original fictional material; scripted software checks are not model results.

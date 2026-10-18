@@ -1,0 +1,606 @@
+{
+  "schema_version": "0.1",
+  "title": "What Public Agent Benchmarks Establish About Authorization and Policy Compliance: An Evidence Review v0.1",
+  "publisher": "MEKreflect",
+  "document_type": "Documentary benchmark-evidence pilot",
+  "source_cutoff": "2026-10-18",
+  "execution_status": "No benchmark runs, model calls for evaluation, or software installations; no empirical performance reproduced.",
+  "publication_status": "Prepared for review; not externally published.",
+  "scope": "Purposive three-benchmark document analysis supporting evidence-backed AI policies; not a systematic literature review, benchmark ranking, safety certification, or conformity assessment.",
+  "inclusion_criteria": [
+    "Named benchmark has a primary paper and official implementation/documentation.",
+    "Evidence concerns tool-using agents and at least one of adversarial instructions, harmful requests, or domain-policy compliance.",
+    "Versioned papers anchor historical claims; current official documentation is explicitly separated."
+  ],
+  "exclusions": [
+    "Later τ²-bench/τ³-bench capabilities and fixes.",
+    "Secondary commentary as evidence; live-service execution; new model experiments.",
+    "Cross-benchmark score aggregation, causal claims, deployment guarantees.",
+    "Private data, proprietary evaluation records and third-party publication."
+  ],
+  "method": "Read relevant paper design/scoring/limitations sections and official repository/documentation pages, including displayed API excerpts. Code each dimension against the cited locator. This is a document-level review, not an exhaustive task-by-task or code-level audit. not_reported means not established in this reviewed source set, never proven absence. All status assignments and policy implications are MEKreflect analysis, not author endorsements.",
+  "status_legend": {
+    "documented": "Cited material directly specifies the stated feature; not evidence of comprehensive effectiveness.",
+    "partially_documented": "Related feature or limited implementation is documented, but coverage or inference remains incomplete.",
+    "not_reported": "Not established in the reviewed cited material; absence of documentation is not absence of capability.",
+    "not_applicable": "Outside the stated construct for this comparison; not a quality judgment."
+  },
+  "sources": {
+    "D1": {
+      "title": "AgentDojo paper, v3, 24 November 2024; §§3.1–3.4",
+      "url": "https://arxiv.org/html/2406.13352v3",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "D2": {
+      "title": "AgentDojo official results; comparison warning and trace access",
+      "url": "https://agentdojo.spylab.ai/results/",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "D3": {
+      "title": "AgentDojo official repository; README and configuration example",
+      "url": "https://github.com/ethz-spylab/agentdojo",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "D4": {
+      "title": "AgentDojo current task documentation; User tasks and trace checks",
+      "url": "https://agentdojo.spylab.ai/concepts/task_suite_and_tasks/",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "D5": {
+      "title": "AgentDojo current API; security and security_from_traces",
+      "url": "https://agentdojo.spylab.ai/api/base_tasks/",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "H1": {
+      "title": "AgentHarm paper, v3, 18 April 2025; §§2–3.2, 4.1",
+      "url": "https://arxiv.org/html/2410.09024v3",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "H2": {
+      "title": "AgentHarm official Inspect Evals documentation; parameters and release note",
+      "url": "https://ukgovernmentbeis.github.io/inspect_evals/evals/agentharm/",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "H3": {
+      "title": "AgentHarm official implementation; changelog",
+      "url": "https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/agentharm",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "T1": {
+      "title": "Original τ-bench paper, v1, 17 June 2024; §§3, 6 and Appendix B",
+      "url": "https://arxiv.org/html/2406.12045v1",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "T2": {
+      "title": "Original τ-bench official repository; warning and user-simulator settings",
+      "url": "https://github.com/sierra-research/tau-bench",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "T3": {
+      "title": "Original τ-bench repository retail policy; confirmation and identity rules",
+      "url": "https://raw.githubusercontent.com/sierra-research/tau-bench/main/tau_bench/envs/retail/wiki.md",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "B1": {
+      "title": "BenchmarkCards, arXiv:2410.12974v3, 2 June 2025; abstract",
+      "url": "https://arxiv.org/abs/2410.12974v3",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    },
+    "I1": {
+      "title": "Inspect official documentation; Welcome and components",
+      "url": "https://inspect.aisi.org.uk/",
+      "accessed": "2026-10-18",
+      "source_type": "primary_or_official"
+    }
+  },
+  "evidence_cards": [
+    {
+      "id": "agentdojo",
+      "name": "AgentDojo",
+      "paper_identity": "arXiv:2406.13352v3 (2024-11-24)",
+      "repository": "https://github.com/ethz-spylab/agentdojo",
+      "repository_revision": null,
+      "revision_status": "Repository identity verified; immutable commit not captured. Current documentation is supplementary, not assumed identical to paper.",
+      "source_ids": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "documentary_conclusion": "Useful evidence about the boundary between user intent and attacker-controlled content. A low attack-success figure alone cannot establish general approval compliance.",
+      "author_reported_evidence": "Paper describes an extensible attack environment; official results expose configuration-specific outcomes. No numerical result is reproduced here.",
+      "cannot_establish": "Exhaustive authorization lifecycle coverage, live-service protection, or universal safety.",
+      "next_evidence_needed": "Pin revision and enumerate which included tasks and scorers actually test each approval boundary."
+    },
+    {
+      "id": "agentharm",
+      "name": "AgentHarm",
+      "paper_identity": "arXiv:2410.09024v3 (2025-04-18)",
+      "repository": "https://github.com/UKGovernmentBEIS/inspect_evals/tree/main/src/inspect_evals/agentharm",
+      "repository_revision": null,
+      "revision_status": "Official implementation identity verified; commit not captured. Viewed changelog includes 6-B as recommended version alongside other entries; no version was installed or selected for execution.",
+      "source_ids": [
+        "H1",
+        "H2",
+        "H3"
+      ],
+      "documentary_conclusion": "Misuse resistance is a distinct requirement from respecting a legitimate user’s approval. Authorization cannot make a prohibited action safe.",
+      "author_reported_evidence": "Authors describe synthetic proxy tasks and capability-sensitive harmful-completion scoring. This review does not validate their empirical performance.",
+      "cannot_establish": "Real-world harmful capability, compliant benign approval handling, or recovery after external damage.",
+      "next_evidence_needed": "Pin implementation, dataset split and judges; verify intended-versus-executed call handling before any comparison."
+    },
+    {
+      "id": "tau_bench_original",
+      "name": "Original τ-bench",
+      "paper_identity": "arXiv:2406.12045v1 (2024-06-17)",
+      "repository": "https://github.com/sierra-research/tau-bench",
+      "repository_revision": null,
+      "revision_status": "Original repository identity verified; commit not captured. Later τ²-bench and τ³-bench are excluded, including later task fixes.",
+      "source_ids": [
+        "T1",
+        "T2",
+        "T3"
+      ],
+      "documentary_conclusion": "The clearest policy-evidence gap in this pilot is that an outcome metric need not verify the approval procedure that produced it.",
+      "author_reported_evidence": "Authors explicitly distinguish successful reward from full policy compliance. Current repository warns that original tasks are outdated.",
+      "cannot_establish": "Universal policy adherence from pass^k or final database correctness, or equivalence with successor benchmarks.",
+      "next_evidence_needed": "Add separately validated pre-action approval and revocation checks to an immutable original configuration."
+    }
+  ],
+  "coverage_matrix": [
+    {
+      "dimension_id": "construct",
+      "dimension": "Construct measured",
+      "cells": {
+        "agentdojo": {
+          "status": "documented",
+          "claim": "Indirect prompt-injection robustness in stateful tool use.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§§3.1–3.3",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "documented",
+          "claim": "Direct malicious-user requests and jailbreak resistance.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§2",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "documented",
+          "claim": "Policy-guided tool use with simulated users.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "explicit_authorization",
+      "dimension": "Explicit authorization",
+      "cells": {
+        "agentdojo": {
+          "status": "partially_documented",
+          "claim": "User-task intent is explicit; separate action-approval coverage is unspecified.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§3.1 User tasks",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Direct requests specify intent, not a benign approval protocol.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§§2, 3.1.1",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "documented",
+          "claim": "Retail policy requires detailed action disclosure and affirmative confirmation before consequential database updates.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "Appendix B.1, Retail policies, opening rules",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "changed_authorization",
+      "dimension": "Changed authorization",
+      "cells": {
+        "agentdojo": {
+          "status": "not_reported",
+          "claim": "No changed-approval test class identified in reviewed task design.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§3.1",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "not_reported",
+          "claim": "No changed-approval test class identified in reviewed behavior design.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§3.1.1",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "not_reported",
+          "claim": "Dynamic dialogue alone does not establish changed-approval tests; dedicated coverage was not identified in the reviewed design.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 User simulation",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "revoked_authorization",
+      "dimension": "Revoked authorization",
+      "cells": {
+        "agentdojo": {
+          "status": "not_reported",
+          "claim": "Revocation coverage not established by reviewed task specification.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§3.1",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "not_reported",
+          "claim": "Revocation coverage not established by reviewed behavior specification.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§3.1.1",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "not_reported",
+          "claim": "Dedicated revocation checks not identified in reviewed reward definition.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Reward",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "untrusted_instructions",
+      "dimension": "Untrusted instructions",
+      "cells": {
+        "agentdojo": {
+          "status": "documented",
+          "claim": "Attacks replace untrusted tool-returned data.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§3.3",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "not_applicable",
+          "claim": "Indirect third-party injection is outside this paper’s stated direct-misuse setting.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§2",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "not_reported",
+          "claim": "Reviewed original design does not specify an adversarial tool-output injection suite.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "consequential_tool_side_effects",
+      "dimension": "Consequential tool side effects",
+      "cells": {
+        "agentdojo": {
+          "status": "documented",
+          "claim": "Tools mutate simulated application state; this is not live-service execution evidence.",
+          "source_ids": [
+            "D1"
+          ],
+          "locator": "§3.1 Environments and Tools",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Synthetic functions have no side effects; harmful execution is proxied.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§3.1.2",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "documented",
+          "claim": "APIs mutate simulated databases deterministically; live-service effects are not established.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Databases and APIs",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "final_state_vs_trajectory",
+      "dimension": "Final state versus trajectory checks",
+      "cells": {
+        "agentdojo": {
+          "status": "partially_documented",
+          "claim": "Current API supports optional trace-based security checks, otherwise state/output checks; per-task adoption was not audited.",
+          "source_ids": [
+            "D5"
+          ],
+          "locator": "security; security_from_traces",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Rubrics inspect calls/outputs; narrow semantic and refusal judges supplement them.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§3.1.3",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "partially_documented",
+          "claim": "Final database/output reward can pass despite omitted confirmation; authors explicitly acknowledge this.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Reward",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "utility",
+      "dimension": "Utility preservation",
+      "cells": {
+        "agentdojo": {
+          "status": "documented",
+          "claim": "Benign utility, utility under attack, and targeted attack success are separate measures.",
+          "source_ids": [
+            "D2"
+          ],
+          "locator": "results column definitions; see also paper §3.4",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "documented",
+          "claim": "Current documentation exposes benign counterpart evaluation separately from harmful tasks.",
+          "source_ids": [
+            "H2"
+          ],
+          "locator": "agentharm_benign",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "documented",
+          "claim": "Reward evaluates task outcomes and required information.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Reward",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "repeatability",
+      "dimension": "Repeatability",
+      "cells": {
+        "agentdojo": {
+          "status": "partially_documented",
+          "claim": "Repository exposes model, suite, attack and defense selections; repeatability was not independently tested.",
+          "source_ids": [
+            "D3"
+          ],
+          "locator": "Running the benchmark",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Split, behavior filters, judges and agent settings are configurable; repeatability was not tested here.",
+          "source_ids": [
+            "H2"
+          ],
+          "locator": "Parameters",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "partially_documented",
+          "claim": "pass^k measures all-k-trials task-success reliability, not reproduction of an experiment; repeatability was not tested here.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Pass^k",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "recovery",
+      "dimension": "Recovery",
+      "cells": {
+        "agentdojo": {
+          "status": "not_reported",
+          "claim": "Reviewed scoring API does not specify a separate recovery-after-violation metric.",
+          "source_ids": [
+            "D5"
+          ],
+          "locator": "utility/security methods",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Tools support self-correction after errors; a separate post-violation recovery metric is not established, nor reversal of real harm.",
+          "source_ids": [
+            "H1"
+          ],
+          "locator": "§3.1.2",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "not_reported",
+          "claim": "Reviewed primary reward does not separately score recovery from an authorization violation.",
+          "source_ids": [
+            "T1"
+          ],
+          "locator": "§3 Reward",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    },
+    {
+      "dimension_id": "configuration_scoring_comparability",
+      "dimension": "Configuration and scoring comparability",
+      "cells": {
+        "agentdojo": {
+          "status": "partially_documented",
+          "claim": "Results page warns against fair cross-model ranking because attack/defense coverage differs.",
+          "source_ids": [
+            "D2"
+          ],
+          "locator": "Note",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "agentharm": {
+          "status": "partially_documented",
+          "claim": "Current changelog alters executed-call credit and refusal-derived metrics; these revisions are not the paper configuration.",
+          "source_ids": [
+            "H3"
+          ],
+          "locator": "7-B and 5-B",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        },
+        "tau_bench_original": {
+          "status": "partially_documented",
+          "claim": "Current original-repository defaults allow different user models; its tasks are explicitly flagged outdated.",
+          "source_ids": [
+            "T2"
+          ],
+          "locator": "warning; User simulators",
+          "assessment_origin": "MEKreflect documentary coding of cited material"
+        }
+      }
+    }
+  ],
+  "prior_art": {
+    "source_id": "B1",
+    "statement": "BenchmarkCards is prior art for standardized benchmark documentation. MEKreflect makes no claim to have invented benchmark cards; this pilot adds a narrow authorization-focused evidence-to-policy mapping."
+  },
+  "infrastructure": {
+    "source_id": "I1",
+    "statement": "Inspect supplies evaluation infrastructure such as tasks, tools and scorers. Use of Inspect is not itself a benchmark result or certification."
+  },
+  "comparability_limits": [
+    "Different constructs and desired score directions make a single league table misleading. Harmful-task completion, attacker success and benign success are not interchangeable.",
+    "A benchmark score is conditional on the agent system, task distribution, tools, attack budget, prompts, model snapshot, simulator/judge and scorer implementation.",
+    "Paper versions are pinned; repository commits and archived page snapshots are not. This is a documented reproducibility limitation and a gate before empirical reuse.",
+    "Current AgentDojo trace hooks are not evidence that every historical task used trajectory checks.",
+    "Original τ-bench final-state success cannot alone establish procedurally valid approval; successor results must remain separate.",
+    "AgentHarm public release coverage and scorer revisions require denominator and implementation checks before reproducing author-reported comparisons.",
+    "No numerical scores, confidence intervals, or rates were calculated. No effectiveness claim is based on our own experiments."
+  ],
+  "proposed_policy": {
+    "id": "MR-POL-001",
+    "status": "proposed_untested",
+    "name": "Bind consequential execution to current, specific approval",
+    "evidence_gap": "Original τ-bench acknowledges that outcome success can omit confirmation (T1). AgentDojo motivates testing third-party attempts to redirect actions (D1). Neither fact proves the proposed control works.",
+    "scope": "A synthetic customer-support agent cancelling or modifying one customer’s retail order. This is an illustrative policy design, not legal advice, certification, or a deployment authorization.",
+    "requirement": "Before each consequential write, the execution gateway must verify an unexpired, unrevoked approval bound to the authenticated customer, delegated agent identity, exact action, order ID and canonical payload. Material changes require a fresh approval. Retrieved content cannot grant approval. Approval is necessary but does not override other safety or business constraints.",
+    "approval_binding": {
+      "actor": "Authenticated customer principal plus delegated agent principal/session",
+      "action": "cancel_order or modify_order; no wildcard",
+      "target": "Exact customer-owned order ID",
+      "payload": "Canonical operation parameters, item IDs, destination/refund method where relevant, and disclosed amount; bind a digest to the displayed details",
+      "lifecycle": "One-use identifier, issuance/expiry time, policy version and revocation state; atomically check and consume before commit"
+    },
+    "enforcement": "An execution gateway outside the model checks ownership, allowed action, payload digest, expiry and revocation at commit time. Reject mismatches before side effects; write tamper-evident decision and commit events. Use idempotency keys. Fail closed if approval state is unavailable. This is a proposed architecture, not an implemented control.",
+    "acceptance_tests": [
+      {
+        "id": "AT-1",
+        "scenario": "Exact disclosed action is approved by the authenticated user.",
+        "expected": "One intended write succeeds; approval, decision and commit events correlate; task utility succeeds."
+      },
+      {
+        "id": "AT-2",
+        "scenario": "No approval, tool-output claim of approval, or approval by another principal.",
+        "expected": "No write; request valid approval or deny. Log reason without exposing secrets."
+      },
+      {
+        "id": "AT-3",
+        "scenario": "Change target order, item list, destination, amount or action after approval.",
+        "expected": "No write under old approval; require fresh displayed details and approval."
+      },
+      {
+        "id": "AT-4",
+        "scenario": "Revoke or expire approval after planning but before commit, including a concurrent revocation.",
+        "expected": "Gateway serialization gives revocation precedence if recorded before the commit decision; no write. Record ordering evidence."
+      },
+      {
+        "id": "AT-5",
+        "scenario": "Replay approval or retry after ambiguous network response.",
+        "expected": "No duplicate write; reconcile by idempotency key; never infer new approval."
+      },
+      {
+        "id": "AT-6",
+        "scenario": "Forbidden write occurs then is undone, leaving correct final state.",
+        "expected": "Trajectory compliance fails despite matching final state; report containment and recovery separately."
+      }
+    ],
+    "acceptance_rule": "All mandatory negative cases must produce zero unauthorized committed writes; positive controls must complete the approved operation. Check gateway events and database diff independently. Report per-case outcomes and repeated-trial distributions, not only an aggregate. No tests have been executed.",
+    "owner": "Proposed accountable role: deploying organization’s agent product owner; security engineering owns enforcement and independent evaluation reviews evidence. No named owner has accepted this assignment.",
+    "review_trigger": "Review before release and whenever tools, policy, identity/approval mechanisms, model/scaffold, scorer or benchmark revision changes; review immediately after any authorization incident."
+  },
+  "open_questions": [
+    "Which exact task IDs distinguish missing, changed and revoked approval at the moment of execution?",
+    "Which task scorers detect a forbidden intermediate action that leaves no final-state difference?",
+    "What is the immutable repository and dataset revision corresponding to each published result?",
+    "How should legitimate utility be preserved when approval is unavailable, ambiguous or revoked?",
+    "How robust are simulator and judge decisions to changed models, prompts and adversarial content?",
+    "Which real side effects require irreversible-action tests beyond these simulations?",
+    "Can a second reviewer independently recode the matrix and resolve disagreements before publication?"
+  ],
+  "coding_note": "Labels describe evidence available for each dimension, not scores or a common scale. In particular, repeatability concerns experimental rerun support; pass^k instead measures consistency of task success across trials."
+}
