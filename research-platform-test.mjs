@@ -36,8 +36,8 @@ const privacy=await readFile('dist-company/transparency/index.html','utf8');test
 const subscribe=await readFile('dist-company/subscribe/index.html','utf8');test(subscribe.includes('pending')&&subscribe.includes('not yet enabled'),'No false email activation');test(subscribe.includes('pattern="[a-fA-F0-9]{64}"'),'Withdrawal token client validation');
 const headers=await readFile('dist-company/_headers','utf8');test(headers.includes('no-transform')&&headers.includes('https://mekreflect-research-api.haris-mekic66.workers.dev'),'CSP and exact-byte serving retained');
 const client=await readFile('dist-company/assets/research-platform.js','utf8');
-test(client.includes("const API='http://127.0.0.1:8787'"),'Public inspection copy uses only a local API');
-test(!client.includes('haris-mekic66.workers.dev'),'Client form calls do not target the production inbox');
+test(client.includes("['https://mekreflect.com','https://mekreflect.pages.dev'].includes(location.origin)"),'Only published origins use the live service');
+test(client.includes(": 'http://127.0.0.1:8787'"),'Local previews and forks keep synthetic form records local');
 const config=await readFile('backend/wrangler.example.jsonc','utf8');
 test(!config.includes('account_id')&&!config.includes('zone_id'),'No production account or zone identifiers');
 console.log(`PASS ${checks} release assertions. Static checks do not replace browser and API tests.`);

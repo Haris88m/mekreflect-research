@@ -30,7 +30,7 @@ npm test
 npm run preview
 ```
 
-Open http://127.0.0.1:4222. The public copy directs form and live-metadata API calls to http://127.0.0.1:8787, never to the production consultation inbox. Without a local backend, the dated research pages remain usable and forms explain that their service is unavailable.
+Open http://127.0.0.1:4222. Local previews and forks direct form and live-metadata API calls to http://127.0.0.1:8787, never to the production consultation inbox. Only the exact published origins mekreflect.com and mekreflect.pages.dev use the existing production API. Without a local backend, the dated research pages remain usable and forms explain that their service is unavailable.
 
 `ci/check.yml` is an inactive GitHub Actions example. The publishing connection does not have workflow-write permission, so this repository does not claim a running CI workflow. The local build and test commands above are the verified checks. An authorized maintainer can review and install the example separately.
 

@@ -1,5 +1,7 @@
-// Public inspection copy: never submit local test records to the live inbox.
-const API='http://127.0.0.1:8787';
+// Only published origins use the live service. Previews and forks stay local.
+const API=['https://mekreflect.com','https://mekreflect.pages.dev'].includes(location.origin)
+  ? 'https://mekreflect-research-api.haris-mekic66.workers.dev'
+  : 'http://127.0.0.1:8787';
 const groups=[...document.querySelectorAll('.nav-group')];
 groups.forEach(group=>group.addEventListener('toggle',()=>{if(group.open)groups.forEach(other=>{if(other!==group)other.open=false;});}));
 document.addEventListener('keydown',event=>{if(event.key==='Escape')groups.forEach(group=>{if(group.open){group.open=false;group.querySelector('summary')?.focus();}});});
