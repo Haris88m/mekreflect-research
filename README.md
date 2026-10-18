@@ -9,8 +9,8 @@ I am Haris Mekic. I work on how people turn operational knowledge into AI system
 The site connects three distinct kinds of work. The first is my applied research on context, procedures and AI-worker handoffs. The second is a dated, attributed import of external AI evaluation data. The third is a reading queue of public arXiv metadata. They are not interchangeable measures of performance.
 
 - A dependency-free Node renderer builds 44 editorial pages and machine-readable public data.
-- A prominent homepage journal links dated evidence, methods and code notes, a first-topic directory, and the downloadable G-2 conceptual evidence specification. Research progress remains separate from scientific execution and measured benefit.
-- The first public agent-support research case publishes its 15-task protocol, three source records and evidence limits; no independent reproductions or benchmark scores are claimed.
+- The homepage journal presents one continuing case, beginning with the 14 October agent-fleet report and followed by our investigation, proposed synthetic test and dated updates. Projects remain in their separate existing area.
+- Six earlier preparation notes remain at their original URLs as archived supporting records, outside the journal feed and sitemap. The broader 15-task protocol and exact artifacts remain accessible; unrelated SDK/vendor examples are not incident evidence or repairs. No incident-related test or independent reproduction has run.
 - Six source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission, visual production, telemetry parsing and current evidence gates.
 - The homepage presents actual recorded observations with their denominators and links to source records. The contact backend keeps withdrawal available under its own allowance when intake is exhausted.
 - An explicit release allowlist and content hashes keep private work outside the release.
@@ -61,7 +61,8 @@ The Worker refreshes selected arXiv metadata daily when deployed with its cron c
 | `open-research.mjs` | Source catalogue and six implementation case studies |
 | `research-case.mjs`, `research-case-content.md` | First public research case, public plan and evidence-state record |
 | `research-home.mjs` | Mission, recorded findings and the inspected context handoff |
-| `research-journal.mjs`, `research-journal.css` | Dated entries, category and topic navigation, evidence graphics, homepage journal feature and feed discovery |
+| `incident-journal.mjs`, `journal-case-content.md` | Current single-case journal, incident/investigation/test/follow-up navigation, homepage feature and case feed |
+| `research-journal.mjs`, `research-journal.css` | Preserved earlier supporting records and shared editorial styles |
 | `evidence-graph-g2.md` | Public conceptual representation and future measurement dictionary; no runtime validation |
 | `research-artifacts.mjs`, `research-artifacts/2026-10-18/` | Explicit public artifact desk: nine archived files plus the reviewed A-1 admission summary, hashes and current/historical packets |
 | `research-admission.mjs` | Current bounded SDK admission status and visible methods dependencies; no runtime result |

@@ -2,13 +2,19 @@
 
 The journal is a curated part of the dependency-free site build. It does not run a background research or publication service.
 
-## Add an achieved milestone
+## Continue the single reader-facing case
 
-Add a dated record in `journalEntries` in `research-journal.mjs`. Preserve a stable slug, entry number, work date, category, affected original task numbers, title, summary, evidence status, and source-linked body. Describe the claim before and after review, actual achievement, relevant revisions and execution context, remaining uncertainty and the next justified decision. Separate the date of historical work from its publication date.
+The journal currently has one case at `/journal/agent-support/`. It begins with the external 14 October agent-fleet report, then separates attributed reporting, our investigation, the proposed synthetic helper/authorization test, results state and dated follow-up. Edit `journal-case-content.md` and the matching case metadata in `incident-journal.mjs`. Add relevant achieved research milestones within this continuing case; preserve dates, source revisions, observations, uncertainty and corrections.
+
+Do not turn website QA, graph construction, packet maintenance or deployment steps into independent public research stories. The six earlier preparation notes in `research-journal.mjs` remain archived, labeled and noindex at their original URLs. They are excluded from journal listings, feeds and sitemap discovery. Preserve those URLs and exact supporting artifacts rather than erasing provenance.
+
+The incident's original instructions are unknown. Our proposed test question is explicitly synthetic: distinguish available outside help from authorized help and preserve user limits on contacts/data sharing. Proposed controls include no helper offer, untrusted help without authorization, the same helper with explicit bounded authorization, and an authorized alternative. Log attempted and executed calls separately; sandbox enforcement alone is not correct agent judgment. Use only fictional tasks/data and local mocks. No execution is claimed or authorized by the journal description.
+
+The SDK guardrail and Microsoft troubleshooting examples are separate archived technical material. They are not this incident's evidence chain, next stage, reproduction or repair. Project implementations belong in the existing Our work area. A later SDK milestone must not silently become a result about the incident.
 
 Keep successful, negative, partial, disputed and unresolved findings where supported. Preserve corrections and earlier uncertainty. Identify reported evidence, source inspection, within-workflow checking, external review and independent runtime reproduction separately. Website build tests are publication checks, not scientific benchmarks. Counts of sources, assertions and tests never become independent-case counts or performance rates.
 
-Use one of the existing categories, or add a category deliberately with a matching navigation anchor. Keep all 15 original research task IDs traceable to the full protocol and original workstream groups. New articles automatically enter category listings, the topic notebook, public journal JSON, the RSS feed and sitemap. Update the homepage's latest-note link when appropriate.
+Keep the incident, investigation, next test and follow-up subtopics within the one case. Preserve the wider protocol's 15 original task IDs in its supporting page. Current case metadata, RSS, homepage discovery and result status must agree; archived notes stay outside the case feed. A new independent reader-facing case requires a new substantive research topic, not another internal preparation step.
 
 ## Assess before release
 

@@ -1,7 +1,9 @@
-# MEKreflect Research Case 01
+# Supporting study protocol
 # Can shared evidence improve AI troubleshooting
 
 **Public research record · 17 October 2026 · Initial evidence review and study design**
+
+**Editorial scope note · 18 October 2026:** This document preserves the broader shared-evidence study protocol and its original 15 tasks. The [reader-facing incident case](/journal/agent-support/) now begins with the external agent-fleet report and follows our investigation, proposed synthetic helper/authorization test and subsequent updates. The SDK and Microsoft examples below are separate methodological material, not that incident's evidence chain, next stage or repair. No SDK execution or successful fix has been independently demonstrated here.
 
 ## The question
 

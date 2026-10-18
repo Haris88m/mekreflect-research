@@ -4,14 +4,24 @@ import {createHash} from 'node:crypto';
 import vm from 'node:vm';
 const read=p=>readFileSync('dist-company/'+p,'utf8');
 const data=JSON.parse(read('data/research-journal.json'));
-assert.equal(data.entries.length,6);
-assert.deepEqual(data.entries.map(e=>e.number),['01','02','03','04','05','06']);
+assert.equal(data.entries.length,1);
+assert.deepEqual(data.entries.map(e=>e.number),['01']);
+assert.equal(data.supportingRecords.length,6);
+assert.equal(data.topic.incidentRuntimeTests,0);
+assert.equal(data.topic.proposedConditions.length,4);
+assert.ok(!('sdkAdmission' in data.topic),'Unrelated SDK status stays out of the incident evidence chain');
 assert.equal(data.topic.taskCount,15);
 assert.equal(data.topic.independentReproductions,0);
 assert.equal(data.topic.benchmarkScores,0);
 const home=read('index.html');
 assert.ok(home.indexOf('journal-home')<home.indexOf('home-evidence shell'),'Homepage prominently introduces the journal');
-for(const e of data.entries){const html=read(e.url.slice(1)+'index.html');assert.ok(html.includes(e.title));assert.ok(html.includes('Tasks '+e.tasks.join(', ')));assert.ok(read('feed.xml').includes('https://mekreflect.com'+e.url));assert.ok(read('sitemap.xml').includes(e.url));}
+for(const e of data.entries){const html=read(e.url.slice(1)+'index.html');assert.ok(html.includes('When agents work'));assert.ok(html.includes('untrusted page offering outside assistance'));assert.ok(read('feed.xml').includes('https://mekreflect.com'+e.url));assert.ok(read('sitemap.xml').includes(e.url));}
+for(const e of data.supportingRecords){const html=read(e.url.slice(1)+'index.html');assert.ok(html.includes(e.title));assert.ok(html.includes('content="noindex,follow"'));assert.ok(!read('feed.xml').includes('https://mekreflect.com'+e.url));assert.ok(!read('sitemap.xml').includes(e.url));}
+assert.equal((read('journal/index.html').match(/data-journal-case=/g)||[]).length,1);
+assert.equal((read('journal/feed.xml').match(/<item>/g)||[]).length,1);
+for(const name of ['journal/index.html','journal/agent-support/index.html']){assert.ok(read(name).includes('/assets/research-journal.css'));assert.ok(read(name).includes('href="/journal/feed.xml"'));}
+assert.equal(read('data/journal-case-01.md'),readFileSync('journal-case-content.md','utf8'));
+const caseText=read('data/journal-case-01.md');assert.ok(!caseText.includes('OpenAI Agents Python'));assert.ok(!caseText.includes('SharePoint'));assert.ok(caseText.includes('Attempted calls and executed calls must be logged separately'));
 const graph=read('data/evidence-graph-g2.md');
 assert.equal(graph,readFileSync('evidence-graph-g2.md','utf8'));
 const graphData=JSON.parse(read('data/evidence-graph-g2.json'));
@@ -27,7 +37,7 @@ const admission=JSON.parse(read('data/sdk-admission-status.json'));
 assert.equal(admission.status,'blocked_inconclusive_at_environment_admission');
 for(const key of ['sdkImports','runtimeRuns','independentReproductions','admittedExecutableCases','benchmarkScores'])assert.equal(admission[key],0);
 assert.equal(admission.baselineResult,null);assert.equal(admission.repairResult,null);
-assert.deepEqual(status.sdkAdmission,admission);assert.deepEqual(data.topic.sdkAdmission,admission);
+assert.deepEqual(status.sdkAdmission,admission);assert.deepEqual(data.methodology.separateTechnicalExamples.sdkAdmission,admission);
 assert.ok(read('journal/methods/evidence-graph/index.html').includes('Runtime admission remains closed.'));
 const publicBrief=read('data/research-artifacts/mekreflect-sdk-admission-status.md');
 assert.ok(publicBrief.includes('not every possible installation or Windows computer'));

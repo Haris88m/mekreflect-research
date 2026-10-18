@@ -4,6 +4,7 @@ import { installOpenResearch } from './open-research.mjs';
 import { installResearchHome } from './research-home.mjs';
 import { installResearchCase } from './research-case.mjs';
 import { installResearchJournal } from './research-journal.mjs';
+import { installIncidentJournal } from './incident-journal.mjs';
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const a=(url,label,cls='text-link')=>`<a class="${cls}" href="${esc(url)}">${esc(label)} <span aria-hidden="true">↗</span></a>`;
@@ -85,6 +86,7 @@ export function installResearchPlatform(files,{page,head}) {
   installOpenResearch(files,{page,head});
   installResearchCase(files,{page,head});
   installResearchJournal(files,{page,head});
+  installIncidentJournal(files,{page,head});
   const publicHeader=header.replace('<a href="/latest/">Latest</a>','<a href="/journal/">Journal</a><a href="/latest/">Latest</a>').replace(a('/case-studies/','Case studies'),a('/case-studies/','Case studies')+a('/open-research/','Open research and code'));
-  for(const [name,content] of files){if(!name.endsWith('.html'))continue;files.set(name,String(content).replace(/<header class="site-header">[\s\S]*?<\/header>/,publicHeader).replace('</head>','<link rel="stylesheet" href="/assets/research-platform.css?v=3"><link rel="alternate" type="application/rss+xml" title="MEKreflect research" href="/feed.xml"><script src="/assets/research-platform.js?v=3" defer></script></head>').replaceAll('Start a conversation','Book a consultation').replaceAll('href="/contact/"','href="/consultations/"'));}
+  for(const [name,content] of files){if(!name.endsWith('.html'))continue;files.set(name,String(content).replace(/<header class="site-header">[\s\S]*?<\/header>/,publicHeader).replace('</head>',`<link rel="stylesheet" href="/assets/research-platform.css?v=3"><link rel="alternate" type="application/rss+xml" title="MEKreflect research${name.startsWith('journal/')?' journal':''}" href="${name.startsWith('journal/')?'/journal/feed.xml':'/feed.xml'}"><script src="/assets/research-platform.js?v=3" defer></script></head>`).replaceAll('Start a conversation','Book a consultation').replaceAll('href="/contact/"','href="/consultations/"'));}
 }
