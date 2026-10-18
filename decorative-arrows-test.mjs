@@ -13,5 +13,5 @@ assert.equal(renderDecorativeArrows(result),result,'Rendering is idempotent');
 const manifest=JSON.parse(readFileSync('private/COMPANY-BUILD-MANIFEST.json','utf8'));
 for(const file of manifest.files.filter(f=>f.name.endsWith('.html'))){const html=readFileSync('dist-company/'+file.name,'utf8');assert.ok(!/<a\b[^>]*>[\s\S]*?↗[\s\S]*?<\/a>/.test(html),'Published links use no arrow glyph');}
 const journal=readFileSync('dist-company/journal/index.html','utf8');
-for(const [href,label] of [['/subscribe/','Subscribe'],['/consultations/','Book a consultation'],['/journal/agent-support/#the-report-that-started-this-case','The incident']])assert.ok(journal.includes(`href="${href}">${label} <span class="decorative-arrow" aria-hidden="true"><svg`),'Visible label, destination and hidden SVG retained');
+for(const [href,label] of [['/open-research/','Open research and code'],['/journal/feed.xml','Research feed'],['/journal/agent-support/#the-report-that-started-this-case','The incident']])assert.ok(journal.includes(`href="${href}">${label} <span class="decorative-arrow" aria-hidden="true"><svg`),'Visible label, destination and hidden SVG retained');
 console.log('PASS font-independent decorative link arrows, unchanged labels/destinations and accessibility semantics');

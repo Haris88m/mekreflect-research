@@ -9,7 +9,7 @@ test(new Set(openStudies.map(s=>s.id)).size===6,'Distinct case URLs');
 for(const s of openStudies){
   const html=await readFile(`dist-company/case-studies/${s.id}/index.html`,'utf8');
   for(const value of [s.title,s.question,s.evidence,s.limits])test(html.includes(value.replaceAll('&','&amp;')),'Case preserves its evidence boundary');
-  test(html.includes('Our work')&&html.includes('Open research and code'),'Shared company navigation');
+  test(html.includes('href="/projects/"')&&html.includes('Open research and code'),'Shared company and code navigation');
   test(html.includes(s.code),'Source connected to the case');
   test(html.includes('<ol>')&&s.workflow.length===4,'Four-step workflow');
 }

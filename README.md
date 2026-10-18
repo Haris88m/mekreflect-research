@@ -1,18 +1,20 @@
 # MEKreflect research platform
 
-I am Haris Mekic. I work on how people turn operational knowledge into AI systems they can inspect, question and improve. This repository publishes the source of the MEKreflect research website, its public-data importer, and its Cloudflare research and consultation backend.
+MEKreflect is an early-stage AI research and development company led by Haris Mekic. We explore practical AI use, system behaviour and useful tools across providers. This repository publishes the company website, its public-data importer, and its Cloudflare research and consultation backend.
 
 [MEKreflect](https://mekreflect.com/) · [Cloudflare mirror](https://mekreflect.pages.dev/) · [Research method](https://mekreflect.pages.dev/method/) · [Observed handoffs](https://mekreflect.pages.dev/evaluations/)
 
 ## What is here
 
-The site connects three distinct kinds of work. The first is my applied research on context, procedures and AI-worker handoffs. The second is a dated, attributed import of external AI evaluation data. The third is a reading queue of public arXiv metadata. They are not interchangeable measures of performance.
+The homepage explains the company purpose and current stage. About, Research and Projects provide separate entry points. Public research begins with one incident-led case, its source investigation, proposed synthetic test and follow-up. Projects retain their own historical implementation evidence. Dated external AI evaluation data and a public arXiv reading queue retain their original attribution; they are not MEKreflect research results.
 
-- A dependency-free Node renderer builds 44 editorial pages and machine-readable public data.
+`company-edition.mjs` runs after the preserved research platform installers, replacing the company entry pages and shared navigation while retaining existing evidence routes and artifacts. `company-edition.css` supplies the original company layout. Inspect is reviewed as a candidate evaluation framework and has not been used. No SDK runtime experiments or independent reproductions have been performed.
+
+- A dependency-free Node renderer builds 45 editorial pages and machine-readable public data.
 - The homepage journal presents one continuing case, beginning with the 14 October agent-fleet report and followed by our investigation, proposed synthetic test and dated updates. Projects remain in their separate existing area.
 - Six earlier preparation notes remain at their original URLs as archived supporting records, outside the journal feed and sitemap. The broader 15-task protocol and exact artifacts remain accessible; unrelated SDK/vendor examples are not incident evidence or repairs. No incident-related test or independent reproduction has run.
 - Six source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission, visual production, telemetry parsing and current evidence gates.
-- The homepage presents actual recorded observations with their denominators and links to source records. The contact backend keeps withdrawal available under its own allowance when intake is exhausted.
+- Historical observations retain their denominators and source links in the project and evaluation areas. The homepage uses a labelled conceptual development diagram rather than performance metrics. The contact backend keeps withdrawal available under its own allowance when intake is exhausted.
 - An explicit release allowlist and content hashes keep private work outside the release.
 - An Epoch AI data importer validates the archive and preserves attribution, source dates, missing values and confidence bounds.
 - OBSERVER8 records describe 23 hosted AI tasks across ten fictional operational cases. Disputed readiness is distinguished from demonstrated false blocking. The raw private research archive is not included.

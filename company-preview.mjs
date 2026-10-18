@@ -16,4 +16,4 @@ http.createServer(async(req,res)=>{
     if(!extname(target))target=resolve(target,'index.html');
     const data=await readFile(target);res.writeHead(200,{'Content-Type':types[extname(target)]||'application/octet-stream'});res.end(data);
   }catch{res.writeHead(404,{'Content-Type':types['.html']});res.end(await readFile(resolve(root,'404.html')));}
-}).listen(4222,'127.0.0.1',()=>console.log('MEKreflect company preview: http://127.0.0.1:4222'));
+}).listen(Number(process.env.PORT||4222),'127.0.0.1',()=>console.log(`MEKreflect company preview: http://127.0.0.1:${process.env.PORT||4222}`));

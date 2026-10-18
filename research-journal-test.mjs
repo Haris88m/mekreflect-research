@@ -14,7 +14,8 @@ assert.equal(data.topic.taskCount,15);
 assert.equal(data.topic.independentReproductions,0);
 assert.equal(data.topic.benchmarkScores,0);
 const home=read('index.html');
-assert.ok(home.indexOf('journal-home')<home.indexOf('home-evidence shell'),'Homepage prominently introduces the journal');
+assert.ok(home.includes('journal-home')&&home.includes('data-journal-case="case-01"'),'Company homepage introduces the continuing case');
+assert.ok(home.indexOf('Our purpose')<home.indexOf('data-journal-case="case-01"'),'Company purpose precedes the current research case');
 for(const e of data.entries){const html=read(e.url.slice(1)+'index.html');assert.ok(html.includes('When agents work'));assert.ok(html.includes('untrusted page offering outside assistance'));assert.ok(read('feed.xml').includes('https://mekreflect.com'+e.url));assert.ok(read('sitemap.xml').includes(e.url));}
 for(const e of data.supportingRecords){const html=read(e.url.slice(1)+'index.html');assert.ok(html.includes(e.title));assert.ok(html.includes('content="noindex,follow"'));assert.ok(!read('feed.xml').includes('https://mekreflect.com'+e.url));assert.ok(!read('sitemap.xml').includes(e.url));}
 assert.equal((read('journal/index.html').match(/data-journal-case=/g)||[]).length,1);

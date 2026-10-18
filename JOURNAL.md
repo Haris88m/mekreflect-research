@@ -2,6 +2,10 @@
 
 The journal is a curated part of the dependency-free site build. It does not run a background research or publication service.
 
+## Company edition
+
+The homepage, About, Research and Projects pages are installed by `company-edition.mjs` after the retained platform and journal installers. Lead with the company's broader practical AI research and development direction, not the founder's personal portfolio or only the first incident's authorization question. Keep projects and historical observations separate from the continuing incident case. External research summaries state their publisher, date and nature; proposals are not results. Inspect remains a candidate framework, not a used tool or resolution of an execution blocker. The original conceptual homepage diagram carries no performance data.
+
 ## Continue the single reader-facing case
 
 The journal currently has one case at `/journal/agent-support/`. It begins with the external 14 October agent-fleet report, then separates attributed reporting, our investigation, the proposed synthetic helper/authorization test, results state and dated follow-up. Edit `journal-case-content.md` and the matching case metadata in `incident-journal.mjs`. Add relevant achieved research milestones within this continuing case; preserve dates, source revisions, observations, uncertainty and corrections.
