@@ -2,6 +2,7 @@ import { mkdir, writeFile, readFile, copyFile, readdir } from 'node:fs/promises'
 import { createHash } from 'node:crypto';
 import { research, cases } from './company-data.mjs';
 import { installResearchPlatform } from './research-platform.mjs';
+import { renderDecorativeArrows } from './decorative-arrows.mjs';
 
 // A distinct release tree prevents withdrawn pages from surviving an incremental build.
 // The former builder and dist remain intact for reference and rollback.
@@ -75,6 +76,7 @@ add('data/method.json',JSON.stringify({name:'SOAP',meaning:'Super Operations AI 
 add('llms.txt',`# MEKreflect\n\n${mission}\n\nFounder-led consultancy and applied research practice by Haris Mekic.\n\n## Public material\n- ${base}/research/ Research agenda and development notes\n- ${base}/case-studies/ Anonymous case studies\n- ${base}/method/ SOAP approach\n- ${base}/data/research.json Full public research summaries\n- ${base}/data/case-studies.json Full public case summaries\n- ${base}/data/method.json Operating method\n- ${base}/transparency/ Evidence and privacy\n\nRead each observation with its method and limits. Prototypes and controlled experiments do not establish enterprise adoption, broad safety or world prediction. No private databases, chat archives, credentials or confidential documents are exposed. The handoff exhibit replays selected observations; it is not live inference.\n`);
 add('robots.txt',`User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
 installResearchPlatform(files,{page,head});
+for(const [name,content] of files)if(name.endsWith('.html'))files.set(name,renderDecorativeArrows(content));
 // Confirmed public company addresses, replacing the earlier generic address.
 for(const [name,content] of files) if(typeof content==='string') files.set(name,content.replaceAll('hello@mekreflect.com','info@mekreflect.com').replaceAll('pending email interests for up to 90 days','pending email interests for up to 30 days').replaceAll('required maxlength="180"','required maxlength="160"').replaceAll('minlength="20" maxlength="200"','minlength="64" maxlength="64" pattern="[a-fA-F0-9]{64}"').replaceAll('<button class="button secondary" type="submit">','<button class="button secondary" type="submit">').replaceAll('<button class="button secondary">','<button class="button secondary" type="submit">').replaceAll('<p>© 2026 MEKreflect. Led by Haris Mekic.</p>','<p>© 2026 MEKreflect. Led by Haris Mekic.<br><a href="mailto:info@mekreflect.com">info@mekreflect.com</a> · <a href="mailto:harism@mekreflect.com">harism@mekreflect.com</a></p>'));
 const routes=[...files.keys()].filter(x=>x.endsWith('index.html')).map(x=>'/'+x.replace('index.html',''));
