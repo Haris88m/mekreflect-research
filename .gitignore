@@ -9,3 +9,5 @@ backend/wrangler.jsonc
 *.sqlite*
 *.db
 *.log
+.playwright-cli/
+output/

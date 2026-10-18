@@ -43,7 +43,7 @@ Model identity and the original operating context remain uncertain. Researchers 
 
 The review identified a candidate before/after pair that isolates PR #4654 while retaining the earlier recovery work: the [immediate parent source](https://github.com/openai/openai-agents-python/commit/18de65134083ee8cbdb84ae30a34c1f30ef4cb86) and the [repair commit](https://github.com/openai/openai-agents-python/commit/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a). Their repository relationship is evidence about source history, not proof that a local failure and repair have been reproduced.
 
-The repaired source still declares package version 0.22.0 in its [package configuration](https://github.com/openai/openai-agents-python/blob/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a/pyproject.toml). A version label alone cannot identify the tested source. The first released package containing the repair remains unverified.
+The repaired source still declares package version 0.22.0 in its [package configuration](https://github.com/openai/openai-agents-python/blob/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a/pyproject.toml). A version label alone cannot identify the tested source. The initial 17 October review recorded the first released package as unverified. A dated [18 October provenance correction](/journal/sdk-release-provenance/) identifies v0.22.1 as the first stable release containing the repair. This verifies source/release identity, not runtime behavior.
 
 This is the strongest current candidate for a bounded reproducibility check. Its public fix has already been inspected, so it is development material, not an unseen-diagnosis holdout. A later test must apply the same behavioral check to both source versions; comparing two different test suites would not isolate the repair.
 
@@ -139,7 +139,7 @@ Use X for the problem and acceptance conditions; Y for environment/context/versi
 
 **Completion check:** A reviewer can reconstruct the source-to-claim-to-attempt chain without mistaking a report for verification or counting duplicate evidence twice. Conflicting and unknown values remain expressible. Formula values stay unknown until measured; no popularity-based truth score or invented transition probability is introduced. A Markov model is optional only if later evidence justifies its assumptions.
 
-**Progress:** Deferred. No graph, fitted model, simulation, ranking algorithm or validated formula result has been produced by this initial study.
+**Progress:** The initial 17 October review deferred this task. On 18 October, conceptual representation revision G-2 was prepared and reviewed within the same AI-assisted workflow. It preserves the three seed families and six assertion IDs, typed provenance and undefined future metrics. This is representation preparation, not a frozen production schema, deployed graph, empirical validation, fitted model, simulation or validated formula result. See the [dated journal entry](/journal/an-evidence-graph-without-a-truth-score/) and [public methods artifact](/journal/methods/evidence-graph/) for the specification and review limits.
 
 ### 8. Define the contribution and correction loop
 
@@ -260,3 +260,14 @@ Each public update should record: date and revision; affected task numbers; the 
 - Recommended bounded evidence, rights and protocol review next. Detailed modeling and trials remain conditional.
 
 This entry records the current research state. The changelog format is a proposed publication practice; it does not imply that a live submission, automated update or benchmark service is operating.
+
+### Provenance and publication update - 18 October 2026
+
+- Published the assessed first case as a complete site snapshot, then established a dated research journal with category and task navigation, sources and code links.
+- Resolved the first stable SDK release containing the candidate repair as v0.22.1. Preserved the historical unknown and the development source's ambiguous 0.22.0 label. Source/release verification is separate from runtime validation.
+- Identified identical candidate dependency locks alongside an unpinned build-system requirement; the upstream test fixture does not sanitize ambient credentials or enforce isolation. Runtime admission remains pending.
+- Prepared conceptual evidence representation G-2 and a measurement dictionary with values explicitly undefined until measured. Review occurred within the same AI-assisted workflow; it is not external validation.
+- Both document conditions must receive the revised release fact and repeat content-parity checks before a future comparison. The earlier six-assertion parity check is historical.
+- Independent reproductions, admitted executable benchmark cases and benchmark scores remain zero. Website build and browser checks are publication checks, not scientific experiments.
+
+Read the [research journal](/journal/agent-support/) for dated entries and source provenance.

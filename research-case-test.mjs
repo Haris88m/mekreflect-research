@@ -12,7 +12,8 @@ assert.deepEqual(tasks.map(x=>Number(x[1])),Array.from({length:15},(_,i)=>i+1),'
 for(const task of tasks) assert.ok(html.includes(inline(task[1]+'. '+task[2])),`Task ${task[1]} is rendered`);
 assert.ok(html.includes('No solver has been evaluated.'));
 assert.ok(html.includes('text parity only'));
-assert.ok(html.includes('first released package containing the repair remains unverified'));
+assert.ok(html.includes('v0.22.1 as the first stable release containing the repair'));
+assert.ok(html.includes('initial 17 October review recorded the first released package as unverified'));
 assert.ok(html.includes('https://mekreflect.com'+casePath));
 assert.ok(html.includes('research-platform.css'));
 assert.ok(read('sitemap.xml').includes(casePath));

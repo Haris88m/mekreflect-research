@@ -14,7 +14,8 @@ for(const f of manifest.files){
  test(createHash('sha256').update(bytes).digest('hex')===f.sha256,`Fresh hash ${f.name}`);
  if(!f.name.endsWith('.html'))continue;
  const html=bytes.toString();
- test(!/\b(?:undefined|NaN)\b|\[object Object\]/.test(html),`No broken rendered values ${f.name}`);
+ test(!/\bNaN\b|\[object Object\]/.test(html),`No broken rendered values ${f.name}`);
+ test(!/="undefined"|<(?:td|dd)>undefined<\//.test(html),`No missing rendered fields ${f.name}`);
  test(!/file:\/\/|[CH]:[\\/]|\.codex[\\/]|hello@mekreflect\.com/.test(html),`No private paths or obsolete email ${f.name}`);
  test((html.match(/<h1\b/g)||[]).length===1,`One h1 ${f.name}`);
  for(const match of html.matchAll(/(?:href|src)="(\/[^"]*)"/g)){
