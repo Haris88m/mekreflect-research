@@ -1,0 +1,3 @@
+# Research artifacts are byte-identified; preserve reviewed LF bytes on Windows.
+evidence-graph-g2.md -text
+research-artifacts/** -text

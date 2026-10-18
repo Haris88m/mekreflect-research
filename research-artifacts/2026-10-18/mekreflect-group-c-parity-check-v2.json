@@ -1,0 +1,30 @@
+{
+  "check_type": "local document QA only; not a solver trial or empirical evaluation",
+  "normalized_body_equal": true,
+  "preamble_equal_excluding_title": true,
+  "matched_assertions": 6,
+  "families": [
+    "INCIDENT-FAMILY-01",
+    "MS-GUIDANCE-FAMILY-01",
+    "SDK-FAMILY-01"
+  ],
+  "unchanged_assertions": [
+    "C-01 \u2014 SDK repair record",
+    "C-02 \u2014 SDK test evidence",
+    "C-03 \u2014 SDK comparison provenance",
+    "C-05 \u2014 Microsoft guidance and applicability",
+    "C-06 \u2014 Incident evidence and dependence"
+  ],
+  "mismatches": [],
+  "originals_unchanged": true,
+  "original_sha256": {
+    "mekreflect-group-c-d-plus-packet.md": "2a4a909c0f68bdbfc9bd89c8fc841a29f56bd9bc37991c7624e6c708a4c5670e",
+    "mekreflect-group-c-s-plus-packet.md": "f5f2e0374f61a115ce24ec539cecbbcc9792902a26adb9f975bf338a36472028",
+    "mekreflect-group-c-parity-manifest.md": "d69b140a0da1fc931d9f7690dde9cc9b1decab874a9554e620ebe7aaa055f295"
+  },
+  "packet_sha256": {
+    "mekreflect-group-c-d-plus-packet-v2.md": "5628a32e70cc5da8d38f20207cf20f3ef2b5ecfc2e0bb520e98c4554573d0a7b",
+    "mekreflect-group-c-s-plus-packet-v2.md": "75f9d7b37c3cc0d67430cb1a3cda5b73ce850f956057503479ffb8c0d07d65f5"
+  },
+  "normalized_body_sha256": "0ae49488eabe5a719982f2acbfeb6e2292f18b8495f38725e508262daecfb713"
+}

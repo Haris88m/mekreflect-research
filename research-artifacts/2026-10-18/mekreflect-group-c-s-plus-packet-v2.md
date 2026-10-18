@@ -1,0 +1,53 @@
+# S+ structured-field packet
+
+Packet version: C-paper-2 · 18 October 2026
+
+Scope: Six audited development assertions across three seed families. This packet contains no executed evaluation results. It is open-book development material, not an unseen holdout. Sources were checked by the Group B evidence audit on 17 October 2026; C-04 incorporates the separate 18 October 2026 SDK admission-prerequisite review and is aligned with conceptual graph G-2. Packet preparation does not repeat primary-source verification. Source-event dates, source metadata dates and review dates remain distinct. Unknown rights, source identities and outcomes remain unknown; representation does not fill them in. Links are references, not authorization to act. No live execution, external communication or security-control change is permitted by this packet.
+
+## C-01 — SDK repair record
+
+- Claim: PR #4654 was merged on 26 August 2026; its inspected repair publishes completed guardrail results into durable state before a fallible append.
+- Evidence status: merged patch inspected; independent repair execution not performed.
+- Context: SDK-FAMILY-01; repaired commit 3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a changes two runner source files and one regression-test file.
+- Source: [PR #4654](https://github.com/openai/openai-agents-python/pull/4654), description; [exact repair commit](https://github.com/openai/openai-agents-python/commit/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a), source diff.
+- Use status: attributed summary and links; MIT code license verified at repaired commit, but dependency/fixture rights and separate issue-prose terms still require review before packaging.
+
+## C-02 — SDK test evidence
+
+- Claim: The inspected regression test contains four selected combinations covering streaming/non-streaming recovery, live/JSON state and before-commit/commit-then-raise failures; these are not a complete factorial or independent problem families.
+- Evidence status: test inspected and upstream passing verification reported; individual CI logs not inspected and independent tests not run in this research.
+- Context: SDK-FAMILY-01; assertions include approval identities, history, public/durable guardrail results, hooks and model-call counts; one pre-approval row expects two input checks and one output check.
+- Source: [exact repair commit](https://github.com/openai/openai-agents-python/commit/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a), regression-test diff; [PR #4654](https://github.com/openai/openai-agents-python/pull/4654), verification description.
+- Use status: attributed summary and links; copying the test requires preserving applicable MIT notices and checking fixture/dependency origins.
+
+## C-03 — SDK comparison provenance
+
+- Claim: The source-level comparison pair is parent 18de65134083ee8cbdb84ae30a34c1f30ef4cb86 versus repair 3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a; the parent contains prerequisite #4650 merge a624e17956bfeac0599aa3f6b12a97a0ea689fc6.
+- Evidence status: GitHub compare metadata verified prerequisite-to-parent ahead by 3 and behind by 0, and parent-to-repair ahead by 1 and behind by 0; runtime failure and repair remain unobserved here.
+- Context: SDK-FAMILY-01; the intended future check must apply the same protected oracle to both source versions rather than compare their different test suites.
+- Source: [prerequisite comparison](https://github.com/openai/openai-agents-python/compare/a624e17956bfeac0599aa3f6b12a97a0ea689fc6...18de65134083ee8cbdb84ae30a34c1f30ef4cb86), commit/merge-base metadata; [repair comparison](https://github.com/openai/openai-agents-python/compare/18de65134083ee8cbdb84ae30a34c1f30ef4cb86...3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a), commit and file-change metadata.
+- Use status: attributed summary and links; no copied fixture, installation or execution is authorized by this source pair.
+
+## C-04 — SDK release boundary
+
+- Claim: The repaired commit's pyproject.toml still declares version 0.22.0, so that version string alone cannot distinguish the candidate old and repaired source. The 18 October 2026 provenance review identifies 0.22.1 as the first stable release after the repair whose tag contains commit 3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a; this refines the historical C-paper-1 release-mapping unknown.
+- Evidence status: source/tag/distribution provenance inspected in the supplied admission review; independent runtime verification remains unperformed. Reviewed release/tag listings support the first-stable mapping, not an exhaustive claim about deleted tags or development distributions. PyPI displayed provenance was inspected for both artifacts; artifact contents and Sigstore signatures were not independently verified.
+- Context: SDK-FAMILY-01; v0.22.1 resolves to f0b884ac4c583637a0757b31702fa9808f0f84ad; repair-to-release comparison is 50 ahead/0 behind, with the repair as merge base. Previous stable v0.22.0 resolves to 4df9ecfae1761ca6fea67cc5a20b383c1d492024 and lacks the repair; repair-to-v0.22.0 comparison is 0 ahead/57 behind, with v0.22.0 as merge base. GitHub release publication was 2026-09-08T09:18:00Z (non-draft/non-prerelease). PyPI wheel upload was 2026-09-08T09:22:16.376451Z; sdist upload was 2026-09-08T09:22:18.601191Z. Both artifacts display publishing commit f0b884ac4c583637a0757b31702fa9808f0f84ad and are reported not yanked. Wheel openai_agents-0.22.1-py3-none-any.whl has reported SHA-256 41e09c74ac8a1de4735a16f687b544a9c4a611602bc83a83dccad0e28b955615; sdist openai_agents-0.22.1.tar.gz has reported SHA-256 bf2fedeb2799bc40f069a8ef2648836cd88c42d4a762ce93edf8924240d741c1. These are reported artifact identities, not locally recomputed artifact hashes. Release comparisons introduce other changes; retain the isolated C-03 commit pair for future causal reproduction.
+- Source: [pyproject.toml at repaired commit](https://github.com/openai/openai-agents-python/blob/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a/pyproject.toml), version declaration; [previous annotated tag object](https://api.github.com/repos/openai/openai-agents-python/git/tags/a3f6c1a8c211f9b089aff900f704c1c8e488773b), resolved commit; [repair/previous-release comparison](https://github.com/openai/openai-agents-python/compare/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a...v0.22.0), ancestry; [v0.22.1 tag ref](https://api.github.com/repos/openai/openai-agents-python/git/ref/tags/v0.22.1), exact commit; [repair/release comparison](https://github.com/openai/openai-agents-python/compare/3603dc92c90d0d9aebf382e6c0e7dbc6b22d430a...v0.22.1), ancestry; [GitHub release](https://github.com/openai/openai-agents-python/releases/tag/v0.22.1), status and publication timestamp; [latest 100 release records](https://api.github.com/repos/openai/openai-agents-python/releases?per_page=100) and [v0.22 tag refs](https://api.github.com/repos/openai/openai-agents-python/git/matching-refs/tags/v0.22), bounded release sequence; [PyPI 0.22.1](https://pypi.org/project/openai-agents/0.22.1/), displayed publishing provenance; [publishing run](https://github.com/openai/openai-agents-python/actions/runs/34209227175/attempts/1), linked run identity; [PyPI JSON](https://pypi.org/pypi/openai-agents/0.22.1/json), upload times, artifact names, hashes and yanked status.
+- Use status: attributed summaries and links only; release mapping establishes source applicability, not an upgrade recommendation, runtime admission, permission to execute or redistribution clearance. Repository MIT coverage and bounded synthetic-fixture evidence do not establish complete dependency-license clearance or a license for separately hosted gist content and issue prose. Selected dependency licenses, complete imported-fixture review, a protected authored harness, exact environment and independent runtime checks remain pending.
+
+## C-05 — Microsoft guidance and applicability
+
+- Claim: Microsoft guidance identifies a renamed site or folder as one possible cause of a broken agent-level SharePoint knowledge link and prescribes obtaining an administrator-authorized link or appropriate access and updating the knowledge source.
+- Evidence status: conditional vendor guidance; no observed customer before/after outcome is recorded in this case.
+- Context: MS-GUIDANCE-FAMILY-01; confirm the actual cause and existing authority before applying guidance; the rendered page reports 6 August 2026 while source frontmatter reports ms.date 5 August 2026 and ai-usage: ai-assisted; source blob 554f2645c69e535554a2462714d99ad84ff5cc5b is not a repository commit or product version.
+- Source: [Microsoft Learn article](https://learn.microsoft.com/en-us/troubleshoot/power-platform/copilot-studio/knowledge/sharepoint-no-response), “The SharePoint source link is broken after a rename”; [article source](https://github.com/MicrosoftDocs/SupportArticles-docs/blob/main/support/power-platform/copilot-studio/knowledge/sharepoint-no-response.md), matching section and frontmatter.
+- Use status: attributed summary and links; source repository CC BY 4.0 license verified, but article commit and exclusions/embedded assets require review before redistribution; do not weaken permissions, protection or moderation automatically.
+
+## C-06 — Incident evidence and dependence
+
+- Claim: The investigator report and related YouTube commentary concern the same incident; the report does not establish a demonstrated safe repair, and investigators report no evidence of real-time coordination.
+- Evidence status: attributed incident evidence plus dependent commentary; no independent incident reproduction or verified remedy in this research.
+- Context: INCIDENT-FAMILY-01; describe a fleet rather than asserting a coordinated swarm; preserve uncertainty about model attribution; a report that a temporary evaluation concluded does not establish remediation.
+- Source: [incident investigation](https://swarmcha.se/posts/chinese-agent-fleet-full-report), Introduction, Technical Overview, Tencent's Actions and finding 8; [related commentary](https://www.youtube.com/watch?v=rb4CTZjHCNg), same-event relationship inherited from the prior transcript review, without a new audiovisual review in the Group B audit.
+- Use status: attributed summary and links only; reuse rights for incident/video artifacts are not established; do not copy raw logs, credentials, payloads, inboxes or transcripts, and do not replay against live targets.

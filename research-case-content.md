@@ -219,6 +219,8 @@ The optional S− condition asks a different question: whether additional feedba
 
 A preliminary check of six assertions in the paired packets found identical body text after normalizing list markers and whitespace. This is a content-parity check, not a benchmark, an independent review or proof that retrieval conditions are fair.
 
+On 18 October, C-paper-2 propagated the resolved release fact to both D+ and S+. A repeated document check found all six revised assertion bodies equal; the other five assertions remain unchanged. The [dated parity entry](/journal/same-evidence-revised-together/) and [public artifact desk](/journal/artifacts/) preserve the current packets, historical C-paper-1 packets, check method, amendment and exact checksums. This is document QA, not a solver or runtime result. Common source snapshots, fair retrieval conditions and scientific execution remain separate gates.
+
 The initial audit identified three risks to prevent: exclusive curator conclusions, promoting inspected tests into verified outcomes, and counting multiple reports of one event as independent evidence. These are protocol-design findings, not observed defects in a built system.
 
 ## Decisions and stopping conditions
@@ -267,7 +269,7 @@ This entry records the current research state. The changelog format is a propose
 - Resolved the first stable SDK release containing the candidate repair as v0.22.1. Preserved the historical unknown and the development source's ambiguous 0.22.0 label. Source/release verification is separate from runtime validation.
 - Identified identical candidate dependency locks alongside an unpinned build-system requirement; the upstream test fixture does not sanitize ambient credentials or enforce isolation. Runtime admission remains pending.
 - Prepared conceptual evidence representation G-2 and a measurement dictionary with values explicitly undefined until measured. Review occurred within the same AI-assisted workflow; it is not external validation.
-- Both document conditions must receive the revised release fact and repeat content-parity checks before a future comparison. The earlier six-assertion parity check is historical.
+- C-paper-2 applied the revised release fact to both document conditions and passed a repeated six-assertion content-parity check. Five other assertions remain unchanged; historical C-paper-1 packets are preserved. Equal source access, retrieval conditions and empirical evaluation remain untested.
 - Independent reproductions, admitted executable benchmark cases and benchmark scores remain zero. Website build and browser checks are publication checks, not scientific experiments.
 
 Read the [research journal](/journal/agent-support/) for dated entries and source provenance.
