@@ -8,7 +8,7 @@ I am Haris Mekic. I work on how people turn operational knowledge into AI system
 
 The site connects three distinct kinds of work. The first is my applied research on context, procedures and AI-worker handoffs. The second is a dated, attributed import of external AI evaluation data. The third is a reading queue of public arXiv metadata. They are not interchangeable measures of performance.
 
-- A dependency-free Node renderer builds 43 editorial pages and machine-readable public data.
+- A dependency-free Node renderer builds 44 editorial pages and machine-readable public data.
 - A prominent homepage journal links dated evidence, methods and code notes, a first-topic directory, and the downloadable G-2 conceptual evidence specification. Research progress remains separate from scientific execution and measured benefit.
 - The first public agent-support research case publishes its 15-task protocol, three source records and evidence limits; no independent reproductions or benchmark scores are claimed.
 - Six source-linked case studies connect the site to [MEKreflect research labs](https://github.com/Haris88m/mekreflect-labs), covering context handoffs, receipt controls, paid AI admission, visual production, telemetry parsing and current evidence gates.
@@ -63,7 +63,8 @@ The Worker refreshes selected arXiv metadata daily when deployed with its cron c
 | `research-home.mjs` | Mission, recorded findings and the inspected context handoff |
 | `research-journal.mjs`, `research-journal.css` | Dated entries, category and topic navigation, evidence graphics, homepage journal feature and feed discovery |
 | `evidence-graph-g2.md` | Public conceptual representation and future measurement dictionary; no runtime validation |
-| `research-artifacts.mjs`, `research-artifacts/2026-10-18/` | Explicit nine-file public artifact desk, hashes, current/historical packets and admission brief |
+| `research-artifacts.mjs`, `research-artifacts/2026-10-18/` | Explicit public artifact desk: nine archived files plus the reviewed A-1 admission summary, hashes and current/historical packets |
+| `research-admission.mjs` | Current bounded SDK admission status and visible methods dependencies; no runtime result |
 | `research-packet-test.mjs` | Document parity and byte-identity QA; no SDK or solver execution |
 | `research-platform.js` | Search, accessible menus, form handling and source status |
 | `intelligence-data.mjs` | Attributed public-source snapshot |

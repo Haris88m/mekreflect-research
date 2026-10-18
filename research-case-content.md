@@ -175,7 +175,7 @@ For the SDK candidate, retain the relevant #4650 prerequisites while isolating #
 
 **Completion check:** Every admitted task has separately observed failing and repaired runs, a passing reference solution, negative controls rejecting trivial/unsafe shortcuts, a version manifest and an independent rerun. Admit cases before inspecting candidate-system scores. Unknown released-version applicability stays unknown. Zero eligible cases is an acceptable result.
 
-**Progress:** No cases admitted or independently reproduced. A candidate source pair is identified; dependency pins, fixture package, final behavioral check, execution conditions and independent rerun remain pending.
+**Progress:** On 18 October, a bounded admission attempt stopped as blocked/inconclusive at the environment gate: the checked executor could not establish the required existing disposable isolation. No SDK imports or runtime tests occurred, and baseline/repair behavior remains unknown. Source evidence, an unresolved manifest and unexecuted drafts were retained; syntax and byte-identity checks do not validate execution. No cases are admitted or independently reproduced. See the [dated stopping point](/journal/admission-stopped-before-execution/) and [public summary A-1](/data/research-artifacts/mekreflect-sdk-admission-status.md). Exact dependencies and rights, complete fixture/import audit, reviewed protected oracle, approved isolated executor and independent rerun remain pending.
 
 ### 12. Run the controlled study and feedback round
 
@@ -271,5 +271,6 @@ This entry records the current research state. The changelog format is a propose
 - Prepared conceptual evidence representation G-2 and a measurement dictionary with values explicitly undefined until measured. Review occurred within the same AI-assisted workflow; it is not external validation.
 - C-paper-2 applied the revised release fact to both document conditions and passed a repeated six-assertion content-parity check. Five other assertions remain unchanged; historical C-paper-1 packets are preserved. Equal source access, retrieval conditions and empirical evaluation remain untested.
 - Independent reproductions, admitted executable benchmark cases and benchmark scores remain zero. Website build and browser checks are publication checks, not scientific experiments.
+- A bounded SDK admission attempt stopped at the environment gate, before any SDK imports or tests. The checked executor's isolation prerequisites were unavailable; this is blocked/inconclusive admission, not an SDK failure or a result about Windows generally. A reviewed public summary records the limits and remaining dependencies.
 
 Read the [research journal](/journal/agent-support/) for dated entries and source provenance.
